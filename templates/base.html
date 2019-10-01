@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Virtual Teaching</title>
+
+        <link rel="icon" type="imagem/png" href="img/meufavicon.png" />
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous"></script>
+
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+              integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+
+        <script type="text/javascript" src="js/principal.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}">
+
+    </head>
+
+    <body>
+
+        {% block conteudo %}
+        <header>
+
+            <input type="checkbox" id="btn-menu">
+            <label for="btn-menu">&#9776</label>
+            <form action="https://www.google.com/search" id="form-header-responsive">
+                <input type="text" name="q" placeholder="  Search" >
+            </form>
+            <nav id="menu">
+    
+                <ul>
+                    <li><a href="#">CURSOS</a></li>
+                    <li><a href="#">APOIE-NOS</a></li>
+                    <li><a href="#" onclick="login()">LOGIN</a></li>
+                    <li><a href="#">E-BOOKS</a></li>
+                    <li>
+                        <form action="https://www.google.com/search">
+                            <input type="text" name="q" placeholder="  Search">
+                        </form>
+                    </li>
+                </ul>
+    
+            </nav>
+    
+        </header>
+        <section id="titulo_pag">
+                <figure><img src="img/vt.png" style="width:300px; height: 300px; margin:auto"></figure>
+                   <h1><span id="v"> VIRTUAL </span> <span id="t"> TEACHING </span></h1>
+        </section>
+        <section id="resumo">
+            
+        </section>
+    
+        <section id="cursos">
+    
+            <div class="card" style="width: 18rem;">
+                  <img class="card-img-top" src="img/web.jpg" alt="Imagem de capa do card">
+                  <div class="card-body">
+                    <h5 class="card-title">Web Design</h5>
+                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                    <a href="#" class="btn btn-primary">Iniciar</a>
+                  </div>
+            </div>
+    
+            <div class="card" style="width: 18rem; margin-left: 30px">
+                  <img class="card-img-top" src="img/logica.jpg" alt="Imagem de capa do card">
+                  <div class="card-body">
+                    <h5 class="card-title">Lógica de Programação</h5>
+                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                    <a href="#" class="btn btn-primary">Iniciar</a>
+                  </div>
+            </div>
+    
+            <div class="card" style="width: 18rem; margin-left: 30px">
+                  <img class="card-img-top" src="img/sistemas.png" alt="Imagem de capa do card">
+                  <div class="card-body">
+                    <h5 class="card-title">Sistemas Operacionais</h5>
+                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                    <a href="#" class="btn btn-primary">Iniciar</a>
+                  </div>
+            </div>
+            
+        </section>
+    
+    
+        <section id="overlay_login"> 
+            <div id="div">
+                <center>
+                    
+                  </center>
+    
+                  <div class="container">
+                      <div class="imgcontainer">
+                        <img src="img/usuario.png" alt="Avatar" class="avatar" style="width: 150px; height: 150px">
+                      </div>
+                    <label for="uname"><b>Email</b></label>
+                    <input type="email" placeholder="Enter Username" name="uname" required>
+    
+                    <label for="psw"><b>Senha</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+    
+                    <button type="submit">Login</button>
+                    <label>
+                          <input type="checkbox" checked="checked" name="remember"> Lembre-me
+                    </label>
+    
+                  </div>
+    
+                  <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn" onclick="login_off()">Cancelar</button>
+                    <button type="button" class="cadastro" onclick="cadastro_on()">Cadastre-se</button>
+                    <span class="psw">Esqueceu a <a href="#">senha?</a></span>
+                  </div>
+            </div>
+        </section>
+    
+       
+        <footer>
+            <div id="footer-center">
+                <div class="footer-itens">
+    
+                </div>
+                <div class="footer-itens">
+    
+                </div>
+                <div class="footer-itens">
+    
+                </div>
+            </div>
+            <div id="copy">
+                <p>&copy; Virtual Teaching</p>
+            </div>
+        </footer>
+        {% endblock conteudo %}
+
+
+    </body>
+</html>

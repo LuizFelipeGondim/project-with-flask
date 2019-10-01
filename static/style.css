@@ -1,0 +1,378 @@
+body{
+    margin:0;
+    font-family: roboto, sans-serif;
+    position: relative;
+}
+/* header */
+header{
+    background-color:#050a14;
+    position: relative;
+    background: linear-gradient(to left, #050a14, #000000);
+    box-shadow: 0 4px 8px #000;
+}
+
+#btn-menu{
+    display: none;
+}
+
+header label{
+    color: #ffffff;
+    font-size: 30px;
+    padding: 2px 2px;
+    display: none;
+    width: 30px;
+
+}
+
+header #form-header-responsive {
+    display: none;
+    margin-top: 8px;
+    position: absolute;
+    margin-right: 0px;
+    padding: 0px 5px;
+}
+
+
+header form input, #menu ul li form input{
+    border: 1px solid #175a8a;
+    border-radius: 5px;
+    height: 30px;
+    background-color: #062545;
+    color: #ffffff;
+    padding: 0px 5px;
+}
+
+
+header label:hover{
+    background-color: #172745;
+    transition: all .5s;
+}
+
+#menu ul {
+    display:flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content:flex-end;
+
+}
+
+
+#menu ul li a{
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 25px 25px;
+    display: block;
+    transition: all .5s;
+
+}
+
+#menu ul li a:hover {
+    background-color: #172745;
+}
+
+#menu ul li form{
+    padding: 20px 25px;
+    display: block;
+}
+
+
+
+@media (max-width: 770px){
+
+    header #form-header-responsive{
+        display: inline-block;
+        padding: 5px 10px;
+
+    }
+
+    header label{
+        display: inline-block;
+
+    }
+
+    #menu ul{
+        position: absolute;
+        width: 70%;
+        background-color: #050a14;
+        flex-direction: column;
+        margin-left: -70%;
+    }
+
+    #menu ul li{
+        border-bottom: 1px solid white;
+        border-top: 1px solid white;
+
+    }
+
+    #menu ul li form{
+        display: none;
+    }
+
+    #btn-menu:checked ~ #menu ul{
+        margin-left: 0;
+    }
+
+    #titulo_pag h1{
+        display: none;
+    }
+
+    .card{
+        display: inline-block;
+    }
+
+    #cursos{
+        display: block;
+        justify-content: none;
+    }
+}
+
+/** Trocar a cor do placeholder **/
+
+::-webkit-input-placeholder {
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+:-ms-input-placeholder {
+    color: #ffffff;
+    opacity: 0.5;
+}
+
+/* ---------------------------------------------------------------------- */
+
+
+/* título da página */
+#titulo_pag{
+    width: 100%;
+    height: 300px;
+    background-color:#052644;  
+    display: flex;
+    justify-content: center; 
+    box-shadow: 0 4px 8px #000;
+}
+
+
+#titulo_pag figure{
+    display: block;
+    
+}
+
+#titulo_pag h1{
+    width: 555px;
+
+}
+
+#v{
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 220%;
+    display: block;
+    font-family: roboto;
+    margin-top: 45px;
+
+}
+
+#t{
+    font-size: 220%;
+    display: block;
+    font-family: roboto;
+    font-weight: 600;
+    color: #ffffff;
+    transform:translate(100px,5px);
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* conteúdo */
+
+#cursos{
+    width: 100%;
+    background-color: #F4F6F7;
+    height: 500px;
+    display:flex;
+    justify-content: center;
+}
+
+#resumo{
+    width: 100%;
+    height: 300px;
+    background-color: #E5E7E9;
+}
+
+.card{
+    display: inline-block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.card a{
+    background-color: #020204;
+    border: none;
+}
+
+.card a:hover{
+    background-color: #172745;
+}
+
+/* ---------------------------------------------------------------------- */
+
+/* overlay */
+
+#overlay_login{
+
+    position: fixed; 
+    display: none; 
+    width: 100%; 
+    height: 100%; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+}
+
+
+/* ---------------------------------------------------------------------- */
+
+/* footer */
+
+footer{
+    background-color: #050a14;
+    margin-bottom: 0px;
+    width: 100%;
+    height: 35%;
+    text-align: center;
+}
+
+
+footer #footer-center{
+    display: inline-block;
+    height: 90%;
+    background-color: #050a14;
+    width: 85%;
+    margin-top: 15px;
+}
+
+footer .footer-itens{
+    display: inline-block;
+    background-color: #175a8a;
+    width: 30%;
+    height: 90%;
+
+}
+
+footer #copy{
+    height: 50px;
+    width: 100%;
+    background-color: #172745;
+    color: white;
+    position: relative;
+}
+
+footer #copy p{
+    margin-top: 15px;
+    margin-left: 50px;
+    position: absolute;
+    opacity: 0.5;
+}
+/* ---------------------------------------------------------------------- */
+
+/* login */
+
+/* Full-width inputs */
+input[type=email], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn, .cadastro{
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 -1px 0;
+  background-color: #fff;
+
+  padding: 2px;
+}
+
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 12px;
+  margin-top: 15px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 400px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn, .cadastro {
+    width: 100%;
+  }
+
+  .container{
+    background-color: #fff;
+  }
+}
+
+@media (min-width: 401px){
+    .container {
+        max-width: 500px;
+        background-color: #fff;
+    }
+
+
+}

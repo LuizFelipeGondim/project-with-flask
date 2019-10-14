@@ -9,9 +9,9 @@
 
         <title>Virtual Teaching</title>
 
-        <link rel="icon" type="imagem/png" href="img/meufavicon.png" />
+        <link rel="icon" type="imagem/png" href="static/img/meufavicon.png" />
 
-
+        
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
                 crossorigin="anonymous"></script>
 
@@ -25,22 +25,21 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-
-        <script type="text/javascript" src="js/principal.js"></script>
         
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}">
 
-        {% block javascript %}
-            <script>
-                function login(){
-	                document.getElementById("overlay_login").style.display = "block";
-                }
+        
+        {% block scripts %}
 
-                function login_off(){
-                    document.getElementById("overlay_login").style.display = "none";
-                }
-            </script>
+            <script type="text/javascript">function login(){
+                document.getElementById("overlay_login").style.display = "block";
+            }
+
+            function login_off(){
+                document.getElementById("overlay_login").style.display = "none";
+            }</script>
 
         {% endblock %}
 
@@ -48,16 +47,15 @@
 
     <body>
 
-        {% block conteudo %}
         <header>
-
             <input type="checkbox" id="btn-menu">
             <label for="btn-menu">&#9776</label>
             <form action="https://www.google.com/search" id="form-header-responsive">
-                <input type="text" name="q" placeholder="  Search" >
+                <input type="text" name="q" placeholder="  Search" >                
             </form>
+
             <nav id="menu">
-    
+            
                 <ul>
                     <li><a href="#">CURSOS</a></li>
                     <li><a href="#">APOIE-NOS</a></li>
@@ -69,100 +67,69 @@
                         </form>
                     </li>
                 </ul>
-    
+            
             </nav>
-    
+            
         </header>
         <section id="titulo_pag">
-                <figure><img src="static/img/vt.png" style="width:300px; height: 300px; margin:auto"></figure>
-                   <h1><span id="v"> VIRTUAL </span> <span id="t"> TEACHING </span></h1>
+            <figure><img src="static/img/vt.png" style="width:300px; height: 300px; margin:auto"></figure>
+            <h1><span id="v"> VIRTUAL </span> <span id="t"> TEACHING </span></h1>
         </section>
-        <section id="resumo">
-            
-        </section>
-    
-        <section id="cursos">
-    
-            <div class="card" style="width: 18rem;">
-                  <img class="card-img-top" src="static/img/web.jpg" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">Web Design</h5>
-                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                    <a href="#" class="btn btn-primary">Iniciar</a>
-                  </div>
-            </div>
-    
-            <div class="card" style="width: 18rem; margin-left: 30px">
-                  <img class="card-img-top" src="static/img/logica.jpg" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">Lógica de Programação</h5>
-                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                    <a href="#" class="btn btn-primary">Iniciar</a>
-                  </div>
-            </div>
-    
-            <div class="card" style="width: 18rem; margin-left: 30px">
-                  <img class="card-img-top" src="static/img/sistemas.png" alt="Imagem de capa do card">
-                  <div class="card-body">
-                    <h5 class="card-title">Sistemas Operacionais</h5>
-                    <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                    <a href="#" class="btn btn-primary">Iniciar</a>
-                  </div>
-            </div>
-            
-        </section>
-    
-    
-        <section id="overlay_login"> 
-            <div id="div">
-                <center>
-                    
-                  </center>
-    
-                  <div class="container">
-                      <div class="imgcontainer">
-                        <img src="static/img/usuario.png" alt="Avatar" class="avatar" style="width: 150px; height: 150px">
-                      </div>
-                    <label for="uname"><b>Email</b></label>
-                    <input type="email" placeholder="Enter Username" name="uname" required>
-    
-                    <label for="psw"><b>Senha</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
-    
-                    <button type="submit">Login</button>
-                    <label>
-                          <input type="checkbox" checked="checked" name="remember"> Lembre-me
-                    </label>
-    
-                  </div>
-    
-                  <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" class="cancelbtn" onclick="login_off()">Cancelar</button>
-                    <button type="button" class="cadastro" onclick="cadastro_on()">Cadastre-se</button>
-                    <span class="psw">Esqueceu a <a href="#">senha?</a></span>
-                  </div>
-            </div>
-        </section>
-    
-       
+
+        {% block conteudo %}    
+        {% endblock conteudo %}
+                
         <footer>
+            <div class="icon-bar">
+                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" class="google"><i class="fa fa-google"></i></a>
+                <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+            </div>
+                        
             <div id="footer-center">
+                        
                 <div class="footer-itens">
-    
+            
                 </div>
                 <div class="footer-itens">
-    
-                </div>
-                <div class="footer-itens">
-    
+            
                 </div>
             </div>
+
             <div id="copy">
                 <p>&copy; Virtual Teaching</p>
             </div>
+    
         </footer>
-        {% endblock conteudo %}
+        <section id="overlay_login"> 
+                  
+            <div id="div">
+            
+                <div class="container">
+                    <div class="imgcontainer">
+                        <img src="static/img/usuario.png" alt="Avatar" class="avatar" style="width: 150px; height: 150px">
+                    </div>
+                    <label for="uname"><b>Email</b></label>
+                    <input type="email" placeholder="Enter Username" name="uname" required>
 
-
+                    <label for="psw"><b>Senha</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+            
+                    <button type="submit">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Lembre-me
+                    </label>
+            
+                </div>
+            
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" class="cancelbtn" onclick="login_off()">Cancelar</button>
+                    <button type="button" class="cadastro" onclick="cadastro_on()">Cadastre-se</button>
+                    <span class="psw">Esqueceu a <a href="#">senha?</a></span>
+                </div>
+            </div>
+        </section>
+        
     </body>
 </html>

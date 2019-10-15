@@ -21,5 +21,5 @@ def web():
     return render_template('web.html')
 
 if(__name__ == '__main__'):
-    app.run(port = 9959)
+    app.run(debug=True, port=9997)
     

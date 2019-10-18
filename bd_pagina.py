@@ -12,42 +12,40 @@ class Curso(db.Model):
     nome_curso = db.Column(db.String(100), nullable = False)
     carga_horaria = db.Column(db.String(25), nullable = False)
 
-	Id_curso Char(5) PRIMARY KEY,
-	nome_curso VARCHAR(100),
-	carga_horaria VARCHAR(25)
-
     def __repr__(self):
-        return '<User %r>' % self.nome
+        return '<User %r>' % self.nome_curso
 
 
 class Usuario(db.Model):
-    matricula = db.Column(db.Integer, primary_key = True) 
-    nome = db.Column(db.String(80), nullable = False)
-    idade = db.Column(db.Integer, nullable = False)
-
-	Id_usuario Char(10) PRIMARY KEY,
-	cpf Char(11) UNIQUE NOT NULL,
-	endereço_usuario VARCHAR(100) NOT NULL,
-	celular Char(11),
-	fixo Char(11),
-	data_nascimento Date NOT NULL,
-	sexo Char(1) NOT NULL CHECK (sexo = 'M' or sexo = 'F')
+    Id = db.Column(db.Integer, primary_key = True) 
+    cpf = db.Column(db.String(11), UNIQUE = True nullable = False)
+    data_nascimento = db.Column(db.Date, nullable = False)
+	nome = db.Column(db.String(100), nullable = False)
 
     def __repr__(self):
         return '<User %r>' % self.nome
 
 
-class Login_usuario(db.Model):
-     matricula = db.Column(db.Integer, primary_key = True) 
-     nome = db.Column(db.String(80), nullable = False)
-     idade = db.Column(db.Integer, nullable = False)
+class Endereco(db.Model):
+	rua = db.Column(db.String(60), primary_key = True) 
+    bairro = db.Column(db.String(30), UNIQUE = True nullable = False)
+    cidade = db.Column(db.String(30), nullable = False)
+	numero_casa = db.Column(db.Integer, nullable = False)
 
-	Id_login Char(10) PRIMARY KEY,
-	Id_usuario Char(10),
-	senha_usuario Char(25) NOT NULL,
-	email_usuario VARCHAR(100) NOT NULL,
-	nome_usuario VARCHAR(100) NOT NULL,
-	FOREIGN KEY (Id_usuario) REFERENCES usuario (Id_usuario)
+	usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.Id'),nullable=False)
+    category = db.relationship('Usuario',backref=db.backref('posts', lazy=True))
+	def __repr__(self):
+        return '<User %r>' % self.cidade
+
+
+class Login_usuario(db.Model):
+    Id_login = db.Column(db.Integer, primary_key = True) 
+    email_usuario = db.Column(db.String(100), UNIQUE = True nullable = False)
+    nome_usuario = db.Column(db.String(100),UNIQUE = True nullable = False)
+	senha_usuario = db.Column(db.String(25), nullable = False)
+
+	usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.Id'),nullable=False)
+    category = db.relationship('Usuario',backref=db.backref('posts', lazy=True))
 
      def __repr__(self):
          return '<User %r>' % self.nome
@@ -83,17 +81,14 @@ class Frequenta(db.Model):
          return '<User %r>' % self.nome
 
 class Modulo(db.Model):
-     matricula = db.Column(db.Integer, primary_key = True) 
-     nome = db.Column(db.String(80), nullable = False)
-     idade = db.Column(db.Integer, nullable = False)
+    Id_modulo = db.Column(db.Integer, primary_key = True) 
+    nome_modulo = db.Column(db.String(100), nullable = False)
 
-	Id_modulo Char(5) PRIMARY KEY,
-	nome_modulo VARCHAR(100),
-	Id_curso Char(5),
-	FOREIGN KEY(Id_curso) REFERENCES curso (Id_curso)
+	curso_id = db.Column(db.Integer, db.ForeignKey('curso.Id_curso'),nullable=False)
+    category = db.relationship('Curso',backref=db.backref('posts', lazy=True))
 
      def __repr__(self):
-         return '<User %r>' % self.nome
+         return '<User %r>' % self.nome_modulo
 
 
 class Pre_requisito(db.Model):
@@ -111,15 +106,12 @@ class Pre_requisito(db.Model):
          return '<User %r>' % self.nome
 
 class Pergunta(db.Model):
-     matricula = db.Column(db.Integer, primary_key = True) 
-     nome = db.Column(db.String(80), nullable = False)
-     idade = db.Column(db.Integer, nullable = False)
+    Id_pergunta = db.Column(db.Integer, primary_key = True) 
+    pergunta = db.Column(db.String(100), nullable = False)
 
-	cod_pergunta Char(7) PRIMARY KEY,
-	Id_usuario Char(10),
-	pergunta VARCHAR(100),
-	FOREIGN KEY (Id_usuario) REFERENCES usuario (Id_usuario)
+	usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.Id'),nullable=False)
+    category = db.relationship('Usuario',backref=db.backref('posts', lazy=True))
 
      def __repr__(self):
-         return '<User %r>' % self.nome
+         return '<User %r>' % self.Id_pergunta
 

@@ -32,16 +32,17 @@
 
         
         {% block scripts %}
+        {% endblock %}
 
-            <script type="text/javascript">function login(){
+        <script type="text/javascript">
+        
+            function login(){
                 document.getElementById("overlay_login").style.display = "block";
             }
-
             function login_off(){
                 document.getElementById("overlay_login").style.display = "none";
-            }</script>
-
-        {% endblock %}
+            }
+        </script>
 
     </head>
 
@@ -71,10 +72,6 @@
             </nav>
             
         </header>
-        <section id="titulo_pag">
-            <figure><img src="static/img/vt.png" style="width:300px; height: 300px; margin:auto"></figure>
-            <h1><span id="v"> VIRTUAL </span> <span id="t"> TEACHING </span></h1>
-        </section>
 
         {% block conteudo %}    
         {% endblock conteudo %}
@@ -88,8 +85,14 @@
                         
             <div id="footer-center">
 
-                <div class="footer-img" >
+                <div id="footer-desc" >
                     <img src="static/img/footer.png" alt="logo do IF">
+                    <p>lkeldwemflmwlefmlmwelfmlwmelfmlwmelfmkmflwmelfmlwmeflmwlf
+                        wfkẃkefẃkefḱwékfpkwefkw
+                        wefḱẃekfẃe
+                        fkwefkẃeokf
+                        wefkẃkefkwekwéfok
+                    </p>
                 </div>
                         
                 <div class="footer-itens">

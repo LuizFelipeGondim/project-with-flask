@@ -37,10 +37,16 @@
         <script type="text/javascript">
         
             function login(){
-                document.getElementById("overlay_login").style.display = "block";
+                document.getElementById("cadastro").style.display = "none";
+                document.getElementById("login").style.display = "block";
             }
-            function login_off(){
-                document.getElementById("overlay_login").style.display = "none";
+            function off(){
+                document.getElementById("login").style.display = "none";
+                document.getElementById("cadastro").style.display = "none";
+            }
+            function cadastro(){
+                document.getElementById("login").style.display = "none";
+                document.getElementById("cadastro").style.display = "block";
             }
         </script>
 
@@ -86,7 +92,9 @@
             <div id="footer-center">
 
                 <div id="footer-desc" >
-                    <img src="static/img/footer.png" alt="logo do IF">
+                    <center>
+                        <img src="static/img/footer.png" alt="logo do IF">
+                    </center>
                     <p>lkeldwemflmwlefmlmwelfmlwmelfmlwmelfmkmflwmelfmlwmeflmwlf
                         wfkẃkefẃkefḱwékfpkwefkw
                         wefḱẃekfẃe
@@ -112,33 +120,59 @@
             </div>
     
         </footer>
-        <section id="overlay_login"> 
-                  
-            <div id="div">
+        <section class="overlay" id="login">  
             
-                <div class="container">
-                    <div class="imgcontainer">
-                        <img src="static/img/usuario.png" alt="Avatar" class="avatar" style="width: 150px; height: 150px">
-                    </div>
-                    <label for="uname"><b>Email</b></label>
-                    <input type="email" placeholder="Enter Username" name="uname" required>
+            <div class="container">
+                <div class="imgcontainer">
+                    <img src="static/img/usuario.png" alt="Avatar" class="avatar" style="width: 150px; height: 150px">
+                </div>
+                <label for="uname"><b>Email</b></label>
+                <input type="email" placeholder="Enter Username" name="uname" required>
 
-                    <label for="psw"><b>Senha</b></label>
-                    <input type="password" placeholder="Enter Password" name="psw" required>
+                <label for="psw"><b>Senha</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+        
+                <button type="submit">Login</button>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> Lembre-me
+                </label>
             
-                    <button type="submit">Login</button>
-                    <label>
-                        <input type="checkbox" checked="checked" name="remember"> Lembre-me
-                    </label>
-            
-                </div>
-            
-                <div class="container" style="background-color:#f1f1f1">
-                    <button type="button" class="cancelbtn" onclick="login_off()">Cancelar</button>
-                    <button type="button" class="cadastro" onclick="cadastro_on()">Cadastre-se</button>
-                    <span class="psw">Esqueceu a <a href="#">senha?</a></span>
-                </div>
             </div>
+            
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" class="cancelbtn" onclick="off()">Cancelar</button>
+                <button type="button" class="cadastro" onclick="cadastro()">Cadastre-se</button>
+                <span class="psw">Esqueceu a <a href="#">senha?</a></span>
+            </div>
+        </section>
+
+        <section class="overlay" id="cadastro">
+            <form>
+                <div class="container" style="margin-top: 10px;">
+                    <label>Email</label>
+                    <input type="email" placeholder="Email">
+
+                    <label >Senha</label>
+                    <input type="password" placeholder="Senha">
+
+                    <label > Repita a senha</label>
+                    <input type="text"  placeholder="Repita a senha">
+
+                    <label>CPF</label>
+                    <input type="text" placeholder="Digite o CPF sem os caracteres especiais">
+                
+                    <label style="display: block;">Cidade</label>
+                    <input type="text" style="width:60%;">
+                
+                    <label> &nbsp&nbsp&nbsp&nbsp Estado</label>
+                    <select style="width: 10%;">
+                      <option></option>
+                      <option>...</option>
+                    </select>
+                    <button type="button" class="cancelbtn" onclick="off()">Cancelar</button>
+                    <button type="submit" class="signupbtn">Sign in</button>
+                </div>
+            </form> 
         </section>
         
     </body>

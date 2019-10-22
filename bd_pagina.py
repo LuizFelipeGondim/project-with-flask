@@ -27,10 +27,8 @@ class Usuario(db.Model):
 
 
 class Endereco(db.Model):
-	rua = db.Column(db.String(60), primary_key = True) 
-    bairro = db.Column(db.String(30), UNIQUE = True nullable = False)
+    estado = db.Column(db.String(30), nullable = False)
     cidade = db.Column(db.String(30), nullable = False)
-	numero_casa = db.Column(db.Integer, nullable = False)
 
 	usuario_id = db.Column(db.Integer, db.ForeignKey('usuario.Id'),nullable=False)
     category = db.relationship('Usuario',backref=db.backref('posts', lazy=True))

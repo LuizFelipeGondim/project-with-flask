@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}">
+    <link rel="icon" type="imagem/png" href="static/img/meufavicon.png" />
+
+    <title>Cadastro</title>
+</head>
+<body style="background: linear-gradient(to bottom left, #050a14, #19346b, #030d97) ;">
+    <div id="cadastro_flex">
+        <form>
+            <div class="container" style="margin:10px 0px;">
+                    <h1 class="titulo_container">CADASTRO</h1> <br/><br/>
+                <label>Email</label>
+                <input type="email" placeholder="Email">
+
+                <label >Senha</label>
+                <input type="password" placeholder="Senha">
+
+                <label > Repita a senha</label>
+                <input type="text"  placeholder="Repita a senha">
+
+                <label>CPF</label>
+                <input type="text" placeholder="Digite o CPF sem os caracteres especiais">
+            
+                <label style="display: block;">Cidade</label>
+                <input type="text" style="width:60%;">
+            
+                <label> &nbsp&nbsp&nbsp Estado</label>
+                <select style="width: 10%;">
+                <option></option>
+                <option>...</option>
+                </select>
+                <button type="submit" class="signupbtn">Sign in</button>
+            </div>
+        </form>
+    </div> 
+</body>
+</html>

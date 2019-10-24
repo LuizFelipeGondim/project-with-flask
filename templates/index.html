@@ -1,14 +1,10 @@
 {% extends 'base.html' %}
 
-{% block conteudo %}
+{% block index %}
 
-{% block scripts %}
-
-{% endblock %}
-
-<section id="titulo_pag">
+<section class="titulo_pag">
   <figure><img src="static/img/vt.png" style="width:300px; height: 300px; margin:auto"></figure>
-  <h1><span id="v"> VIRTUAL </span> <span id="t"> TEACHING </span></h1>
+  <h1><span class="tp"> VIRTUAL </span> <span id="t"> TEACHING </span></h1>
 </section>
 
 <section class = "gray_box">
@@ -88,7 +84,7 @@ Quinto: entrar na no arquivo .py para começar a digitar
     <div class="card-body">
       <h5 class="card-title">Web Design</h5>
       <p class="card-text">O objetivo desse curso é fazer com que o aluno tenha um conhecimento básico das linguagens HTML e CSS.</p>
-      <a href="#" class="btn btn-primary">Iniciar</a>
+      <a href="/web" class="btn btn-primary">Iniciar</a>
     </div>
   </div>
 
@@ -97,7 +93,7 @@ Quinto: entrar na no arquivo .py para começar a digitar
     <div class="card-body">
       <h5 class="card-title">Lógica de Programação</h5>
       <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-      <a href="#" class="btn btn-primary">Iniciar</a>
+      <a href="/programacao" class="btn btn-primary">Iniciar</a>
     </div>
   </div>
 
@@ -106,7 +102,7 @@ Quinto: entrar na no arquivo .py para começar a digitar
     <div class="card-body">
       <h5 class="card-title">Sistemas Operacionais</h5>
       <p class="card-text">Nesse curso será abordado os conceitos principais, características e processos dos Sistemas Operacionais.</p>
-      <a href="#" class="btn btn-primary">Iniciar</a>
+      <a href="/sistemas-operacionais" class="btn btn-primary">Iniciar</a>
     </div>
   </div>
         
@@ -124,4 +120,4 @@ Quinto: entrar na no arquivo .py para começar a digitar
 
     
 
-    {% endblock conteudo %}
+    {% endblock index %}

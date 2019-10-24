@@ -14,7 +14,7 @@ def sistemas():
 
 @app.route('/programacao')
 def progamacao():
-    return render_template('progamacao.html')
+    return render_template('programacao.html')
 
 @app.route('/web')
 def web():
@@ -24,6 +24,10 @@ def web():
 def cadastro():
     return render_template('cadastro.html')
 
+@app.route('/apoie')
+def apoie():
+    return render_template('apoie.html')
+    
 if(__name__ == '__main__'):
     app.run(debug=True)
     

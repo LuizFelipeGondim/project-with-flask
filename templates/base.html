@@ -37,17 +37,12 @@
         <script type="text/javascript">
         
             function login(){
-                document.getElementById("cadastro").style.display = "none";
                 document.getElementById("login").style.display = "block";
             }
             function off(){
                 document.getElementById("login").style.display = "none";
-                document.getElementById("cadastro").style.display = "none";
             }
-            function cadastro(){
-                document.getElementById("login").style.display = "none";
-                document.getElementById("cadastro").style.display = "block";
-            }
+            
         </script>
 
     </head>
@@ -68,10 +63,9 @@
             <nav id="menu">
             
                 <ul>
-                    <li><a href="#">CURSOS</a></li>
-                    <li><a href="#">APOIE-NOS</a></li>
-                    <li><a href="#" onclick="login()">LOGIN</a></li>
-                    <li><a href="#">E-BOOKS</a></li>
+                    <li><a href="/apoie">APOIE-NOS</a></li>
+                    <li><a href="/index">HOME</a></li>
+                    <li><a href="#" onclick="login()">LOGIN</a></li>    
                     <li>
                         <form action="https://www.google.com/search">
                             <input type="text" name="q" placeholder="  Search">
@@ -83,8 +77,20 @@
             
         </header>
 
-        {% block conteudo %}    
-        {% endblock conteudo %}
+        {% block index %}    
+        {% endblock index %}
+
+        {% block apoie %}    
+        {% endblock apoie %}
+
+        {% block web %}    
+        {% endblock web %}
+        
+        {% block programacao %}    
+        {% endblock programacao %}
+        
+        {% block sistemas %}    
+        {% endblock sistemas %}
                 
         <footer>
             <div class="icon-bar">
@@ -107,16 +113,20 @@
                     </p>
                 </div>
                         
-                <div class="footer-itens">
+                <div class="footer-itens" style="margin-top:50px;">
                     <ul>
                         <li><span style="font-weight: 600;">EMAIL PARA CONTATO</span> <br/> 
                             <a href="www.gmail.com">luizfelipegondimaraujo@gmail.com</a></li> <br/>
                         <li><span style="font-weight: 600;">ATENDIMENTO</span><br/> 
-                            Todos os dias a partir das 19 horas até às 22 horas</li>
+                            De Segunda a Sexta, das 19h00 às 22h00 </li>
                     </ul>    
             
                 </div>
-                
+                <div class="footer-itens" style="margin:20px 0px 0px 30px;">
+                    <figure>
+                        <img src="static/img/logo_if.png" alt="Logo do IF Baiano" style="height: 200px; width: 200px;"/>
+                    </figure>
+                </div>
             </div>
 
             <div id="copy">

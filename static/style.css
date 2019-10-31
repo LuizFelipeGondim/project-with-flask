@@ -267,7 +267,7 @@ footer #footer-center{
     height: 185px;
     justify-content: center;
     background-color: #012530;
-    align-content: space-around;
+    align-content: space-between;
 }
 
 footer .footer-itens{
@@ -276,13 +276,17 @@ footer .footer-itens{
     color: #fff;
     text-decoration: none;
     padding: 15px;
-    
 }
+
+footer .footer-itens:nth-child(1){
+    width: 200px;
+}
+
 
 footer #footer-desc{
     height: 100px;
     width: 300px;
-    margin-top:40px;
+    margin:40px 0px 0px 30px;
     padding: 15px;
 }
 
@@ -329,8 +333,11 @@ footer #copy p{
 }
 
 @media screen and (max-width: 650px) {
-    footer .footer-itens:nth-child(3){
+    footer .footer-itens:nth-child(1){
         display: none;
+    }
+    .footer-itens {
+        margin-left:-50px;
     }
   }
 /* ---------------------------------------------------------------------- */
@@ -450,21 +457,21 @@ span.psw {
 
 
 
-
-
 .icon-bar {
     position: absolute;
-    margin-top: 40px;
+    margin-top: 50px;
   }
   
   /* Style the icon bar links */
   .icon-bar a {
-    display: block;
+    display: inline-block;
     text-align: center;
     padding: 16px;
     transition: all 0.3s ease;
     color: white;
     font-size: 20px;
+    width: 75px;
+    margin:0px 10px 10px 0px;
   }
   
   /* Style the social media icons with color, if you want */
@@ -486,6 +493,12 @@ span.psw {
     background: #bb0000;
     color: white;
   }
+
+  .twitter {
+    background: #1da1f2;
+    color: white;
+  }
+
 
  /* ---------------------------------------------------------------------- */
 

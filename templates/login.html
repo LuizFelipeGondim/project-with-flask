@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}">
+        <link rel="icon" type="imagem/png" href="static/img/meufavicon.png" />
+    </head>
+    <body style="background:  #050a14">
+        <div id="cadastro_flex">
+                <form action="" method="POST">  
+                    <div class="container" style="margin:10px 0px;">
+                        <h1 class="titulo_container">LOGIN</h1> <br/><br/> 
+                        {{formulario.email.label}}
+                        {{formulario.email(class_="input")}}
+
+                        {{formulario.senha.label}}
+                        {{formulario.senha(class_="input")}} 
+                
+                        {{formulario.entrar(class_="btnform")}}
+                        
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Lembre-me
+                        </label>
+                    </div>
+                </form>
+        </div> 
+    </body>
+</html>

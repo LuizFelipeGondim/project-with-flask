@@ -31,17 +31,9 @@
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}">
 
         
-        {% block scripts %}
-        {% endblock %}
 
         <script type="text/javascript">
         
-            function login(){
-                document.getElementById("login").style.display = "block";
-            }
-            function off(){
-                document.getElementById("login").style.display = "none";
-            }
             
         </script>
 
@@ -65,7 +57,7 @@
                 <ul>
                     <li><a href="/apoie">APOIE-NOS</a></li>
                     <li><a href="/index">HOME</a></li>
-                    <li><a href="#" onclick="login()">LOGIN</a></li>    
+                    <li><a href="/login">LOGIN</a></li>    
                     <li>
                         <form action="https://www.google.com/search">
                             <input type="text" name="q" placeholder="  Search">
@@ -133,33 +125,8 @@
             </div>
     
         </footer>
-        <section class="overlay" id="login">  
-            
-            <div class="container">
-                <h1 class="titulo_container">LOGIN</h1> <br/><br/>
-                <label for="uname"><b>Email</b></label>
-                <input type="email" placeholder="Enter Username" name="uname" required>
 
-                <label for="psw"><b>Senha</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-        
-                <button type="submit">Login</button>
-                <label>
-                    <input type="checkbox" checked="checked" name="remember"> Lembre-me
-                </label>
-            
-            </div>
-            
-            <div class="container" style="background-color:#f1f1f1">
-                <button type="button" class="cancelbtn" onclick="off()">Cancelar</button>
-                <a href="/cadastro"><button type="button" class="cadastro">Cadastre-se</button></a>
-                <span class="psw">Esqueceu a <a href="#">senha?</a></span>
-            </div>
-        </section>
-
-        <section class="overlay" id="cadastro">
-            
-        </section>
-        
+        <script type="text/javascript" src="{{url_for('static', filename='js/principal.js') }}">
+        </script>
     </body>
 </html>

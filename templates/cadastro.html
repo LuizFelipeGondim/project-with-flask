@@ -11,34 +11,87 @@
 
     <title>Cadastro</title>
 </head>
-<body style="background: linear-gradient(to bottom left, #050a14, #19346b, #050a4e) ;">
+<body style="background:  #050a14;">
+    
+    {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-warning"
+                    <ul class=flashes>
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+        {% endwith %}
     <div id="cadastro_flex">
-        <form>
+        <form action="" method="POST">
             <div class="container" style="margin:10px 0px;">
-                    <h1 class="titulo_container">CADASTRO</h1> <br/><br/>
-                <label>Email</label>
-                <input type="email" placeholder="Email">
+                 <h1 class="titulo_container">CADASTRO</h1> <br/><br/>
 
-                <label >Senha</label>
-                <input type="password" placeholder="Senha">
+                {{form.csrf_token}}
+                {{ form.hidden_tag() }}
 
-                <label > Repita a senha</label>
-                <input type="text"  placeholder="Repita a senha">
+                {{form.username.label}}
+                {{form.username(class_="input")}}
 
-                <label>CPF</label>
-                <input type="text" placeholder="Digite o CPF sem os caracteres especiais">
-            
-                <label style="display: block;">Cidade</label>
-                <input type="text" style="width:60%;">
-            
-                <label> &nbsp&nbsp&nbsp Estado</label>
-                <select style="width: 10%;">
-                <option></option>
-                <option>...</option>
-                </select>
-                <button type="submit" class="signupbtn">Sign in</button>
+                {% if form.errors.username %}
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            {% for e in form.errors.username %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                {{form.email.label}}
+                {{form.email(class_="input")}}
+
+
+                {% if form.errors.email %}
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            {% for e in form.errors.email %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                {{form.senha.label}}
+                {{form.senha(class_="input")}}
+
+
+                {% if form.errors.senha %}
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            {% for e in form.errors.senha %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                {{form.repita_senha.label}}
+                {{form.repita_senha(class_="input")}}
+
+
+                {% if form.errors.repita_senha %}
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            {% for e in form.errors.repita_senha %}
+                                <li>{{ e }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+
+                <br/><br/><br/>
+                <button type="submit" class="btnform"> Cadastrar</button>
             </div>
         </form>
     </div> 
+    
 </body>
 </html>

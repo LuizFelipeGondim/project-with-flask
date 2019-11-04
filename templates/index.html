@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block index %}
+{% block content %}
 
 <section class="titulo_pag">
   <figure><img src="static/img/vt.png" style="width:300px; height: 300px; margin:auto"></figure>
@@ -9,71 +9,13 @@
 
 <section class = "gray_box">
   <div class="conteudo">
-      COMANDO LINUX
-
-limpar tela: clear
-
-caminho de diretórios: pwd
-
-entrar em diretórios: cd
-
-listar arquivos: ls
-
-para voltar uma pasta por vez: cd ..
-
-para voltar para a pasta usuário: cd ~
-
-remover arquivos: rm (nome do arquivo (um ou mais))
-
-remover todos os arquivos: rm *
-
-remover um diretóro: rm -rf
-
-especificações do PC: lspci
-
-criar pasta: mkdir
-
-editor de texto: nano
-
--------------------------------------------------------
-Cria a lista do que precisa atualizar: sudo apt update
-
-Atualiza: sudo apt upgrade
--------------------------------------------------------
-Primeiro: Criar pasta pra instalar o virtual env
-Segundo: virtualenv -p python3 env
-Terceiro: source env/bin/activate
-Quarto: pip install flask
-Quinto: entrar na no arquivo .py para começar a digitar
-Primeiro: Criar pasta pra instalar o virtual env
-Segundo: virtualenv -p python3 env
-Terceiro: source env/bin/activate
-Quarto: pip install flask
-Quinto: entrar na no arquivo .py para começar a digitarPrimeiro: Criar pasta pra instalar o virtual env
-Segundo: virtualenv -p python3 env
-Terceiro: source env/bin/activate
-Quarto: pip install flask
-Quinto: entrar na no arquivo .py para começar a digitarPrimeiro: Criar pasta pra instalar o virtual env
-Segundo: virtualenv -p python3 env
-Terceiro: source env/bin/activate
-Quarto: pip install flask
-Quinto: entrar na no arquivo .py para começar a digitarPrimeiro: Criar pasta pra instalar o virtual env
-Segundo: virtualenv -p python3 env
-Terceiro: source env/bin/activate
-Quarto: pip install flask
-Quinto: entrar na no arquivo .py para começar a digitarPrimeiro: Criar pasta pra instalar o virtual env
-Segundo: virtualenv -p python3 env
-Terceiro: source env/bin/activate
-Quarto: pip install flask
-Quinto: entrar na no arquivo .py para começar a digitarPrimeiro: Criar pasta pra instalar o virtual env
-Segundo: virtualenv -p python3 env
-Terceiro: source env/bin/activate
-Quarto: pip install flask
-Quinto: entrar na no arquivo .py para começar a digitar
-
-
-
-
+      <p>O curso de Lógica de Programação é recomendado para todos aqueles que querem iniciar nesse no mundo, pois fornecerá uma base sólida que facilitará a aprendizagem das demais linguagens do mercado, como C, Java, Python, entre outros. 
+        Será utilizado o Portugol para demonstrar a lógica básica e as estruturas mais utilizadas no universo da programação. Essa pseudo-linguagem será utilizada porque ela é o que há de mais próximo do português, o que facilita na aprendizagem do aluno.
+        INTRODUÇÃO PROGRAMAÇÃO
+      </p>
+      <p> Para iniciarmos, precisamos entender o conceito e a importância dos algoritmos. Eles são uma sequência de passos lógicos e ordenados visando  a resolução de um problema. Dessa forma, é perceptível que os algoritmos são a base da lógica de programação, 
+        uma vez que esta é nada mais do que a organização coerente de instruções para o alcance de um objetivo. Além disso, está cada vez mais comum a presença desses artificios computacionais no nosso dia-a-dia, aparecendo em aplicativos de smartphones, tablets e computadores e até em sistemas embarcados de micro-ondas, por exemplo.
+      </p>
   </div>
 </section>
 
@@ -84,7 +26,12 @@ Quinto: entrar na no arquivo .py para começar a digitar
     <div class="card-body">
       <h5 class="card-title">Web Design</h5>
       <p class="card-text">O objetivo desse curso é fazer com que o aluno tenha um conhecimento básico das linguagens HTML e CSS.</p>
-      <a href="/web" class="btn btn-primary">Iniciar</a>
+      {% if current_user.is_authenticated %}
+        <a href="{{url_for('web')}}" class="btn btn-primary">Iniciar</a>
+      {% else %} 
+        <a href="{{url_for('login')}}" class="btn btn-primary">Iniciar</a>
+      {% endif %}
+      
     </div>
   </div>
 
@@ -93,7 +40,11 @@ Quinto: entrar na no arquivo .py para começar a digitar
     <div class="card-body">
       <h5 class="card-title">Lógica de Programação</h5>
       <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-      <a href="/programacao" class="btn btn-primary">Iniciar</a>
+      {% if current_user.is_authenticated %}
+        <a href="{{url_for('programacao')}}" class="btn btn-primary">Iniciar</a>
+      {% else %} 
+        <a href="{{url_for('login')}}" class="btn btn-primary">Iniciar</a>
+      {% endif %}
     </div>
   </div>
 
@@ -102,7 +53,11 @@ Quinto: entrar na no arquivo .py para começar a digitar
     <div class="card-body">
       <h5 class="card-title">Sistemas Operacionais</h5>
       <p class="card-text">Nesse curso será abordado os conceitos principais, características e processos dos Sistemas Operacionais.</p>
-      <a href="/sistemas-operacionais" class="btn btn-primary">Iniciar</a>
+      {% if current_user.is_authenticated %}
+        <a href="{{url_for('sistemas-operacionais')}}" class="btn btn-primary">Iniciar</a>
+      {% else %} 
+        <a href="{{url_for('login')}}" class="btn btn-primary">Iniciar</a>
+      {% endif %}
     </div>
   </div>
         
@@ -120,4 +75,4 @@ Quinto: entrar na no arquivo .py para começar a digitar
 
     
 
-    {% endblock index %}
+    {% endblock content %}

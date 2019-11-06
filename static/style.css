@@ -88,62 +88,6 @@ header #menu_icon:hover{
 
 
 
-@media (max-width: 770px){
-
-    header #form-header-responsive{
-        display: inline-block;
-        padding: 5px 10px;
-
-    }
-
-    header #menu_icon div{
-        display: block;
-    }
-
-    header #menu_icon{
-        display: inline-block;
-        margin:15px 10px;
-    }
-
-    #menu ul{
-        position: absolute;
-        width: 70%;
-        background-color: #050a14;
-        flex-direction: column;
-        margin-left: -70%;
-    }
-
-    #menu ul li{
-        border-bottom: 1px solid white;
-        border-top: 1px solid white;
-
-    }
-
-    #menu ul li form{
-        display: none;
-    }
-
-    #btn-menu:checked ~ #menu ul{
-        margin-left: 0;
-    }
-
-    .titulo_pag h1{
-        display: none;
-    }
-
-    section .titulo_pag_apoie{
-        display: none;
-    }
-
-    #cursos{
-        
-        flex-flow: wrap;
-    }
-
-    footer #footer-desc{
-        display: none;
-    }
-}
 
 /** Trocar a cor do placeholder **/
 
@@ -236,6 +180,13 @@ header #menu_icon:hover{
     display: flex;
     justify-content: center;
 }
+/*
+.gray_box div h1{
+    font-size: 220%;
+    font-family: roboto;
+    font-weight: 600;
+    color: #ffffff;
+}*/
 
 .card{
     
@@ -256,11 +207,48 @@ header #menu_icon:hover{
 .conteudo{
     min-height: 386px;
     display: flex;
-    padding: 30px 0;
-    width: 60%;
+    padding: 30px;
+    width: 70%;
     align-content: space-around;
     position: relative;
+    background-color: #ffffff;
+    margin: 15px 0px;
 }
+
+.conteudo-column{
+    min-height: 386px;
+    padding: 30px;
+    width: 60%;
+    position: relative;
+    background-color: #ffffff;
+    margin: 0px 0px 15px 0px;
+}
+
+.titulo_curso{
+    color: #012530;
+    font-size: 220%;
+    font-family: roboto;
+    font-weight: 600;
+}
+
+hr{
+    background-color: #1f67ae;
+    height: 1.5px;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex-container div{
+    border: 2px solid black;
+    height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 
 /* ---------------------------------------------------------------------- */
 
@@ -345,14 +333,7 @@ footer #copy p{
     opacity: 0.5;
 }
 
-@media screen and (max-width: 650px) {
-    footer .footer-itens:nth-child(1){
-        display: none;
-    }
-    .footer-itens {
-        margin-left:-50px;
-    }
-  }
+
 /* ---------------------------------------------------------------------- */
 
 /* overlay */
@@ -483,26 +464,8 @@ span.psw {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 400px) {
-  span.psw {
-    display: block;
-    float: none;
-  }
-  .cancelbtn, .cadastro, .signupbtn {
-    width: 100%;
-  }
 
-  .container{
-    background-color: #fff;
-  }
-}
 
-@media (min-width: 401px){
-    .container {
-        max-width: 500px;
-        background-color: #fff;
-    }
-}
 
 /* ---------------------------------------------------------------------- */
 
@@ -555,9 +518,105 @@ span.psw {
 
 /* apoie */ 
 
-.gray_box div h1{
-        font-size: 220%;
-        font-family: roboto;
-        font-weight: 600;
-        color: #ffffff;
+
+@media (max-width: 1040px){
+    .conteudo-column iframe{
+        width: 300px;
+        height: 169px;
+    }
 }
+
+@media (max-width: 770px){
+
+    header #form-header-responsive{
+        display: inline-block;
+        padding: 5px 10px;
+
+    }
+
+    header #menu_icon div{
+        display: block;
+    }
+
+    header #menu_icon{
+        display: inline-block;
+        margin:15px 10px;
+    }
+
+    #menu ul{
+        position: absolute;
+        width: 70%;
+        background-color: #050a14;
+        flex-direction: column;
+        margin-left: -70%;
+    }
+
+    #menu ul li{
+        border-bottom: 1px solid white;
+        border-top: 1px solid white;
+
+    }
+
+    #menu ul li form{
+        display: none;
+    }
+
+    #btn-menu:checked ~ #menu ul{
+        margin-left: 0;
+    }
+
+    .titulo_pag h1{
+        display: none;
+    }
+
+    section .titulo_pag_apoie{
+        display: none;
+    }
+
+    #cursos{
+        
+        flex-flow: wrap;
+    }
+
+    footer #footer-desc{
+        display: none;
+    }
+
+    .conteudo{
+        width: 95%;
+    }
+
+    .conteudo-column{
+        width: 95%;
+        padding: 10px;
+    }
+}
+
+@media (min-width: 401px){
+    .container {
+        max-width: 500px;
+        background-color: #fff;
+    }
+}
+@media screen and (max-width: 400px) {
+    span.psw {
+      display: block;
+      float: none;
+    }
+    .cancelbtn, .cadastro, .signupbtn {
+      width: 100%;
+    }
+  
+    .container{
+      background-color: #fff;
+    }
+  }
+
+  @media screen and (max-width: 650px) {
+    footer .footer-itens:nth-child(1){
+        display: none;
+    }
+    .footer-itens {
+        margin-left:-50px;
+    }
+  }

@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
 class Usuario(db.Model):
-    Id = db.Column(db.Integer, primary_key = True, autocomplete = True) 
+    id = db.Column(db.Integer, primary_key = True, autocomplete = True) 
     username = db.Column(db.String(100), unique = True, nullable = False)
     email = db.Column(db.String(100), unique = True, nullable = False)
     senha = db.Column(db.String(25), nullable = False)

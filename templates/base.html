@@ -7,7 +7,7 @@
 
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>Virtual Teaching</title>
+        <title>{% block title %}{% endblock title %}</title>
 
         <link rel="icon" type="imagem/png" href="static/img/meufavicon.png" />
 
@@ -113,10 +113,16 @@
         </footer>
         <div id="mySidepanel" class="sidepanel">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="/logout" onclick="closeNav()">Sair</a>
+            <div class="content-section">
+                <div class="media">
+                    <img class="rounded-circle account-img" style="height: 70px; width:70px" src="static/img/usuario.png" alt="">
+                    <div>
+                        <h2 class="account-heading">{{ current_user.username }}</h2>
+                        <p class="text-secondary">{{ current_user.email}}</p>
+                    </div>
+                </div>
+            </div>
+            <a href="/logout" onclick="closeNav()">sair</a>
           </div>
           
           

@@ -1,28 +1,31 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    HTML
+{% endblock title %}
 {% block content %}
-    <section class="titulo_pag" style="background-color: #295dba;">
+    <section class="titulo_pag2" style="background-color: #295dba;">
         <figure><img src="static/img/logo-web.png" style="width:300px; height: 300px; margin:auto"></figure>
-        <h1><span class="tp"> VIRTUAL </span> <span id="t"> TEACHING </span></h1>
+        <h1>HTML</h1>
     </section>
     <section class = "gray_box">
             <div class="conteudo-column">
-                    <br/>
-                    <h1 class="titulo_curso">INTRODUÇÃO</h1>
-                    <hr>
-    
-                    <br/><br/><br/>
-                    <center>
-                        <iframe width="560" height="315" 
-                            src="https://www.youtube.com/embed/iEVLDKOLgQk" frameborder="0" controls allowfullscreen></iframe>
-                    </center>
-                    <br/><br/><br/>
+                <br/>
+                <h1 class="titulo_curso">INTRODUÇÃO</h1>
+                <hr>
+
+                <br/><br/><br/>
+                <center>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lg49Rm9SkfE" 
+                            frameborder="0" allowfullscreen></iframe>
+                </center>
+                <br/><br/><br/>
+                <h1 class="titulo_curso"> AULAS </h1>
+                <hr><br/>
                 <div class="flex-container" style="justify-content: space-around;">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                    <a href="#"><button type="button" title=""> AULA 01 </button></a>
+                    <a href="#"><button type="button" title=""> AULA 02 </button></a>
+                    <a href="#"><button type="button" title=""> AULA 03 </button></a>
+                    <a href="#"><button type="button" title=""> AULA 04 </button></a>
                 </div>
             </div>
         </section>

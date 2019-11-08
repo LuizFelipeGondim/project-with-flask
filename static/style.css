@@ -38,7 +38,6 @@ header #form-header-responsive {
     margin-top: 8px;
     position: absolute;
     margin-left: 20px;
-    padding: 0px 5px;
 }
 
 
@@ -82,7 +81,7 @@ header #menu_icon:hover{
 }
 
 #menu ul li form{
-    padding: 15px 25px;
+    padding: 22px 25px;
     display: block;
 }
 
@@ -122,6 +121,17 @@ header #menu_icon:hover{
     display: flex;
     justify-content: center; 
     box-shadow: 0 4px 8px #000;
+}
+
+.titulo_pag2{
+    display: flex;
+    justify-content: center;
+}
+
+.titulo_pag2 h1{
+    color: #ffffff;
+    font-size: 600%;
+    margin-top: 90px;
 }
 
 .titulo_pag_apoie{
@@ -242,13 +252,23 @@ hr{
     width: 100%;
 }
 
-.flex-container div{
-    border: 2px solid black;
-    height: 100px;
+.flex-container button{
+    background-color: #13378e;
+    color: #ffffff;
+    height: 80px;
     width: 100%;
     margin-bottom: 10px;
+    font-weight:600 ;
 }
 
+.flex-container button:hover{
+    opacity: 0.8;
+}
+
+.texto-curso{
+    text-align: justify;
+    text-indent:3em
+}
 
 /* ---------------------------------------------------------------------- */
 
@@ -516,7 +536,14 @@ span.psw {
 
  /* ---------------------------------------------------------------------- */
 
-/* apoie */ 
+.media{
+    align-items: center;
+    flex-direction: column;
+} 
+.media div{
+    align-items: center;
+    flex-direction: column;
+}
 
 
 @media (max-width: 1040px){
@@ -530,7 +557,7 @@ span.psw {
 
     header #form-header-responsive{
         display: inline-block;
-        padding: 5px 10px;
+        padding: 15px 10px;
 
     }
 
@@ -565,7 +592,7 @@ span.psw {
         margin-left: 0;
     }
 
-    .titulo_pag h1{
+    .titulo_pag h1, .titulo_pag2 h1{
         display: none;
     }
 

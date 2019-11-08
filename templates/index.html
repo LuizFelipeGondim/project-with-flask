@@ -24,10 +24,10 @@
   <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="static/img/web.jpg" alt="Imagem de capa do card">
     <div class="card-body">
-      <h5 class="card-title">Web Design</h5>
-      <p class="card-text">O objetivo desse curso é fazer com que o aluno tenha um conhecimento básico das linguagens HTML e CSS.</p>
+      <h5 class="card-title">HTML</h5>
+      <p class="card-text">O objetivo desse curso é fazer com que o aluno tenha um conhecimento básico da linguagem de marcação HTML.</p>
       {% if current_user.is_authenticated %}
-        <a href="{{url_for('web')}}" class="btn btn-primary">Iniciar</a>
+        <a href="{{url_for('html')}}" class="btn btn-primary">Iniciar</a>
       {% else %} 
         <a href="{{url_for('login')}}" class="btn btn-primary">Iniciar</a>
       {% endif %}
@@ -38,10 +38,10 @@
   <div class="card" style="width: 18rem; ">
     <img class="card-img-top" src="static/img/logica.jpg" alt="Imagem de capa do card">
     <div class="card-body">
-      <h5 class="card-title">Lógica de Programação</h5>
+      <h5 class="card-title">LÓGICA</h5>
       <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
       {% if current_user.is_authenticated %}
-        <a href="{{url_for('programacao')}}" class="btn btn-primary">Iniciar</a>
+        <a href="{{url_for('logica')}}" class="btn btn-primary">Iniciar</a>
       {% else %} 
         <a href="{{url_for('login')}}" class="btn btn-primary">Iniciar</a>
       {% endif %}
@@ -51,10 +51,10 @@
   <div class="card" style="width: 18rem">
     <img class="card-img-top" src="static/img/sistemas.png" alt="Imagem de capa do card">
     <div class="card-body">
-      <h5 class="card-title">Sistemas Operacionais</h5>
+      <h5 class="card-title">SISTEMAS OPERACIONAIS</h5>
       <p class="card-text">Nesse curso será abordado os conceitos principais, características e processos dos Sistemas Operacionais.</p>
       {% if current_user.is_authenticated %}
-        <a href="{{url_for('sistemas-operacionais')}}" class="btn btn-primary">Iniciar</a>
+        <a href="{{url_for('sistemas')}}" class="btn btn-primary">Iniciar</a>
       {% else %} 
         <a href="{{url_for('login')}}" class="btn btn-primary">Iniciar</a>
       {% endif %}

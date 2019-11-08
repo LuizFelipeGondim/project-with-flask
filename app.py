@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request, flash
 from registro import LoginForm, CadastraUsuarioForm
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import LoginManager, login_user, logout_user
+from flask_login import LoginManager, login_user, logout_user, login_required
 
 app = Flask(__name__)
 
@@ -20,14 +20,8 @@ class Usuario(db.Model):
     email = db.Column(db.String(100), unique = True, nullable = False)
     senha = db.Column(db.String(80), nullable = False)
     
-    def __init__(self, username, email, senha):
-        self.username = username
-        self.email = email
-        self.senha = generate_password_hash(senha)
 
-    def verify_password(self, senha):
-        return check_password_hash(self.senha, senha)
-
+    
     @property
     def is_authenticated(self):
         return True
@@ -61,7 +55,7 @@ def cadastro():
             flash('Senhas')
             return redirect(url_for('cadastro'))
 
-        new_user = Usuario(email=email, username=username, senha=generate_password_hash(senha))
+        new_user = Usuario(email=email, username=username, senha=generate_password_hash(senha, method='pbkdf2:sha512'))
         db.session.add(new_user)
         db.session.commit()
         return redirect(url_for('login'))
@@ -77,10 +71,11 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = Usuario.query.filter_by(email=form.email.data).first()
-        if user and user.senha == form.senha.data:
+        if user and check_password_hash(user.senha, form.senha.data):
             login_user(user)
             flash('Logged in')
             return redirect(url_for('home'))
+       
         else:
             flash('Invalid Login')
             return redirect(url_for('login'))
@@ -101,12 +96,14 @@ def home():
 def sistemas():
     return render_template('sistemas-operacionais.html')
 
-@app.route('/programacao')
-def progamacao():
+@app.route('/logica')
+def logica():
     return render_template('programacao.html')
 
-@app.route('/web')
-def web():
+
+@app.route('/html')
+@login_required
+def html():
     return render_template('web.html')
 
 @app.route('/apoie')

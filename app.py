@@ -121,6 +121,24 @@ def html():
 def apoie():
     return render_template('apoie.html')
 
+@app.route('/aula1-logica')
+def aula1L():
+    return render_template('aula1-logica.html')
+
+@app.route('/aula2-logica')
+def aula2L():
+    return render_template('aula2-logica.html')
+
+@app.route('/aula3-logica')
+def aula3L():
+    return render_template('aula3-logica.html')
+
+@app.route('/aula4-logica')
+def aula4L():
+    return render_template('aula4-logica.html')
+
+
+
     
 if(__name__ == '__main__'):
     app.run(debug=True)

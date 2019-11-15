@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}
+    AULA 4 - HTML
+{% endblock title %}
+
+{% block content %}
+<section class="titulo_pag2" style="background-color: #295dba;">
+    <figure><img src="static/img/logo-web.png" style="width:300px; height: 300px; margin:auto"></figure>
+    <h1>HTML</h1>
+</section>
+<section class = "gray_box">
+    <div class="conteudo-column">
+        <br/>
+        <h1 class="titulo_curso">FORMULÁRIOS</h1>
+        <hr> <br/>
+        
+        <div class="texto-curso">
+            <p>As tags de formulário são implementadas para obter informações do usuário, realizar cadastros, receber opiniões, realizar 
+                login, entre outros. Inicialmente, colocamos a tag form no documento e depois incluimos o conteúdo do formulário. Quando 
+                queremos criar campos de preenchimento, devemos utilizar a tag input, enquanto para o campo referente à mensagem, 
+                devemos utilizar a tag textarea.</p>
+            <p>A tag input possui o atributo type, que varia entre diversos tipos, veja alguns tipos abaixo. Também há o atributo 
+                placeholder, que é uma mensagem que ficará disponível na caixa do input enquanto nada for digitado.</p> <br/>
+        </div><br/>
+
+        <div class="lista-curso">
+            <li><b> input type="text" </b>: Define um campo para receber qualquer caracter.</li> <br/>
+
+            <li><b> input type="email" </b>: Define um campo para receber emails.</li> <br/>
+
+            <li> <b> input type="password" </b>: Define um campo para receber senhas.</li> <br/>
+
+            <li><b> input type=”submit” </b>: Define um botão que servirá para o envio do formulário. </li> <br/>
+
+            <li> <b> input type="date" </b>: Define um campo para recerber datas.</li> <br/>
+            
+        </div>
+
+        <div class="texto-curso">
+            <p>As tags textarea têm a mesma função que o input. No entanto, seu campo de preenchimento é um 
+                área extensa que pode ser redimensionada pelo usuário.</p> <br/>
+        </div> <br/>
+
+        <figure class="highlight">
+            <pre>
+                <img src="/static/img-curso/textarea.png" alt=""> <br/>
+            </pre>
+        </figure> <br/>
+
+        <br/>
+        <h1 class="titulo_curso">DIVs</h1>
+        <hr> <br/>
+        <div class="texto-curso">
+            <p>A tag div é utilizada para agrupar elementos com fins de estilo ou para posicionar elementos. Exemplo da estrutura:</p> <br/>
+
+        </div> <br/>
+
+        <figure class="highlight">
+            <pre>
+                <img src="/static/img-curso/div.png" alt=""> <br/>
+            </pre>
+        </figure> <br/>
+
+        <h1 class="titulo_curso">ATIVIDADE FINAL</h1>
+        <hr> <br/>
+        <div class="texto-curso">
+            <p> Como foi dito anteriormente, podemos dizer que a programação é simplesmente ensinar uma máquina a executar tarefas 
+                e tomar decisões. Para fixar essa ideia na cabeça de vocês, iremos fazer nosso primeiro programa utilizando o Visualg.
+                Para entrar no mundo da programação com o pé direito, todo programador Júnior deve executar, a princípio, o famoso "Hello 
+                World!!". Para isso, digite os comandos abaixo:</p> 
+        </div><br/>
+        <a href="{{url_for('home')}}"><button class="button"><span>PRÓXIMA AULA </span></button></a>
+    </div>
+</section>
+
+{% endblock %}

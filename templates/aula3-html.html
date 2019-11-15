@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block title %}
+    AULA 3 - HTML
+{% endblock title %}
+
+{% block content %}
+<section class="titulo_pag2" style="background-color: #295dba;">
+    <figure><img src="static/img/logo-web.png" style="width:300px; height: 300px; margin:auto"></figure>
+    <h1>HTML</h1>
+</section>
+<section class = "gray_box">
+    <div class="conteudo-column">
+        <br/>
+        <h1 class="titulo_curso">MULTIMEDIA</h1>
+        <hr> <br/>
+        
+        <div class="texto-curso">
+            <p>As tags de multimídia servem para incluir imagens, vídeos, áudios, iframes e outros tipos de conteúdo multimídia. Elas são:</p>
+        </div>
+        
+        <div class="lista-curso">
+            <li><b> video </b>: Essa tag insere um vídeo no nosso documento. Para manipulá-la é necessário algumas ferramentas, dentre elas estão o 
+                atributo constrols e a tag source, servindo para ativar os controles de multimedia e rebecer o local do video, respectivamente.</li> <br/>
+            
+            <figure class="highlight">
+                <pre>
+                    <img src="/static/img-curso/video.png" alt=""> <br/>
+                </pre>
+            </figure><br/>
+
+            <li><b> audio </b>: Essa tag funciona da mesma forma que a tag video, portanto, utilizamos a tag source dentro dela. Vejamos o exemplo a seguir:</li> <br/>
+            
+            <figure class="highlight">
+                <pre>
+                    <img src="/static/img-curso/audio.png" alt=""> <br/>
+                </pre>
+            </figure><br/>
+
+            <li> <b> img </b>: Utilizada para apresentar imagens. Elas são acompanhadas pelos atributos src e alt. O primeiro serve para indicar o local da imagem 
+                e o segundo para definir um texto alternativo para imagem.</li> <br/>
+            <figure class="highlight">
+                <pre>
+                    <img src="/static/img-curso/img.png" alt=""> <br/>
+                </pre>
+            </figure><br/>
+
+            <li> Por fim, os <b> iframes </b> que servem para incluir recursos de uma outra página. Geralmente adicionamos videos do youtube por meio 
+                deles. </li> <br/>
+        </div>
+
+        <br/>
+        <h1 class="titulo_curso">LINKS E LISTAS</h1>
+        <hr> <br/>
+        <div class="texto-curso">
+            <p>O link é o responsável por fazer a ligação entre páginas com diferentes domínios ou até mesmo de elementos de uma mesma página. Ele é 
+                composto pelas tag 'a' e dentro dela informamos o local que desejamos linkar, isso acontece por meio do atributo "href". Segue o 
+                exemplo de um link:</p> <br/>
+        </div>
+            
+        <figure class="highlight">
+            <pre>
+                <img src="/static/img-curso/link.png" alt=""> <br/>
+            </pre>
+        </figure> <br/>
+
+        <div class="texto-curso">
+            <p>Para poder criar uma lista, podemos utilizar uma lista ordenada, a partir das tags ol, ou uma lista não ordenada, a partir 
+                das tags ul. Posteriormente, incluímos dentro da lista os elementos da mesma, dentro das tags li. Segue o exemplo:</p> <br/>
+        </div> 
+
+        <figure class="highlight">
+            <pre>
+                <img src="/static/img-curso/lista.png" alt=""> <br/>
+            </pre>
+        </figure>
+
+        <br/>
+        <h1 class="titulo_curso">ATIVIDADE</h1>
+        <hr> <br/>
+        <div class="texto-curso">
+            <p> Como foi dito anteriormente, podemos dizer que a programação é simplesmente ensinar uma máquina a executar tarefas 
+                e tomar decisões. Para fixar essa ideia na cabeça de vocês, iremos fazer nosso primeiro programa utilizando o Visualg.
+                Para entrar no mundo da programação com o pé direito, todo programador Júnior deve executar, a princípio, o famoso "Hello 
+                World!!". Para isso, digite os comandos abaixo:</p> 
+        </div><br/>
+        <a href="{{url_for('aula4H')}}"><button class="button"><span>PRÓXIMA AULA </span></button></a>
+    </div>
+</section>
+
+{% endblock %}

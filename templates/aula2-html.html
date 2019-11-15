@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}
+    AULA 2 - HTML
+{% endblock title %}
+
+{% block content %}
+<section class="titulo_pag2" style="background-color: #295dba;">
+    <figure><img src="static/img/logo-web.png" style="width:300px; height: 300px; margin:auto"></figure>
+    <h1>HTML</h1>
+</section>
+<section class = "gray_box">
+    <div class="conteudo-column">
+        <br/>
+        <h1 class="titulo_curso">TÍTULOS E TAGS DE TEXTO</h1>
+        <hr> <br/>
+        
+        <div class="texto-curso">
+            <p>Para definir Títulos em uma página, utilizamos a tag h1. Atualmente existem seis níveis de títulos que vão 
+                    do h1 até o h6. Quanto maior o número da tag, menor é o tamanho da fonte. Digite o exemplo abaixo e teste você mesmo!</p>
+        </div>
+
+        <figure class="highlight">
+            <pre>
+                <img src="/static/img-curso/titulos.png" alt=""> <br/>
+            </pre>
+        </figure> <br/>
+
+        <div class="texto-curso">
+            <p>Já falamos dos títulos, agora precisamos abordar outra parte essencial nas nossas páginas, os textos. As tags de texto definem 
+                textos, estilos de fonte, parágrafos, etc.</p>
+        </div> <br/>
+
+        <div class="lista-curso">
+            <li><b> p </b>: Principal tag de texto, constrói um parágrafo.</li> <br/>
+
+            <li><b> b </b>: Transforma o conteúdo em negrito.</li> <br/>
+
+            <li><b> i </b>: Transforma o conteúdo em itálico.</li> <br/>
+
+            <li><b> hr </b>: Forma uma linha horizontal e não necessita de fechamento.</li> <br/>
+
+        </div>
+
+        <figure class="highlight">
+            <pre>
+                <img src="/static/img-curso/tags-texto.png" alt=""> <br/>
+            </pre>
+        </figure> <br/>
+
+        <br/>
+        <h1 class="titulo_curso">TABLES</h1>
+        <hr> <br/>
+        <div class="texto-curso">
+                <p>O uso de tabelas melhora muito a aparência de uma página pois permite o alinhamento de textos e imagens, além de ordenar 
+                    as informações de uma forma padronizada.</p>
+                
+                <p>Uma tabela é constituída de linhas, colunas e células. Elas são criadas pela tag table, suas linhas são criadas pela 
+                    tag tr e as células de uma linha são organizadas pelas tags td ou th (células de título). Veja o código a seguir e 
+                    reproduza no seu editor:</p> <br/>
+        </div> <br/>
+
+        <figure class="highlight">
+            <pre>
+                <img src="/static/img-curso/tabela.png" alt=""> <br/>
+            </pre>
+        </figure> <br/>
+
+        <div class="alert alert-primary" role="alert">
+            <p> NOTA: Utilize o atributo Border para as bordas da tabela aparecerem.</p> 
+        </div> <br/>
+
+        <br/>
+        <h1 class="titulo_curso">ATIVIDADE</h1>
+        <hr> <br/>
+        <div class="texto-curso">
+                <p>O Visualg, programa gratuíto de edição, interpretação e execução de algoritmos, será utilizado para a codificação dos nossos 
+                    programas. Dessa forma é necessário efetuar a sua instalaçãO através do link abaixo, depois é só extrair 
+                    e executar. Lembrando que ele é compatível com versões superiores ao Windows 95 e com o Linux.</p> <br/>
+
+                <a href="https://sourceforge.net/projects/visualg30/" class="link"> DOWNLOAD DO VISUALG 3.0 </a>
+        </div> <br/>
+        <a href="{{url_for('aula3H')}}"><button class="button"><span>PRÓXIMA AULA </span></button></a>
+    </div>
+</section>
+{% endblock %}

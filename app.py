@@ -1,11 +1,13 @@
 import os
-import secrets
-from PIL import Image
-from flask import Flask, render_template, redirect, url_for, request, flash
+
+from functools import wraps
+from flask import Flask, render_template, redirect, url_for, request, session
 from forms import LoginForm, CadastraUsuarioForm, UpdateImage
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, login_user, logout_user, login_required,current_user, UserMixin
+from flask_bootstrap import Bootstrap
+
 
 app = Flask(__name__)
 
@@ -15,6 +17,7 @@ app.config['SECRET_KEY'] = '8d39132b1bfec3225ad1aa46df64deee'
 
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
+Bootstrap(app)
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -27,6 +30,17 @@ class Usuario(db.Model, UserMixin):
     senha = db.Column(db.String(80), nullable = False)
     image_file = db.Column(db.String(20), nullable=False, default='default.png')
 
+'''
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in user_id:
+            return f(*args, **kwargs)
+        else:
+            return redirect(url_for('login', next=request.url))
+        
+    return wrap
+'''
 
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
@@ -70,38 +84,32 @@ def login():
 
 @app.route('/logout')
 def logout():
+    session.clear()
     logout_user()   
     return redirect(url_for('index'))
 
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template('index.html')
-
-def save_picture(form_picture):
-    random_hex = secrets.token_hex(8)
-    _, f_ext = os.path.splitext(form_picture.filename)
-    picture_fn = random_hex + f_ext
-    picture_path = os.path.join(app.root_path, 'static/profile_pics', picture_fn)
-    output_size = (125, 125)
-    i = Image.open(form_picture)
-    i.thumbnail(output_size)
-    i.save(picture_path)
-
-    return picture_fn
+    if current_user.is_anonymous:
+        return render_template('index.html')
+    else:
+        return render_template('home.html')
+    
 
 @app.route('/home', methods=['GET', 'POST'])
 def home():
     form = UpdateImage()
     if form.validate_on_submit():
-        if form.picture.data:
-            picture_file = save_picture(form.picture.data)
-            current_user.image_file = picture_file
-            db.session.commit()
-            
+        image = 'img/profile_pics/' + form.picture.data.filename
+        form.picture.data.save(os.path.join(app.static_folder, image))
+        current_user.query.update({ 'image_file': form.picture.data.filename })
+        db.session.commit()
 
-    image_file = url_for('static', filename='img/profile_pics/' + current_user.image_file)
-    return render_template('home.html', image_file=image_file, form=form)
+    user = Usuario.query.filter_by(email=str(current_user.email)).first()
+    imagem = 'img/profile_pics/' + user.image_file
+    print(imagem)
+    return render_template('home.html', form=form, image=imagem)
 
 @app.route('/sistemas-operacionais')
 def sistemas():
@@ -137,9 +145,22 @@ def aula3L():
 def aula4L():
     return render_template('aula4-logica.html')
 
+@app.route('/aula1-html')
+def aula1H():
+    return render_template('aula1-html.html')
 
+@app.route('/aula2-html')
+def aula2H():
+    return render_template('aula2-html.html')
 
-    
+@app.route('/aula3-html')
+def aula3H():
+    return render_template('aula3-html.html')
+
+@app.route('/aula4-html')
+def aula4H():
+    return render_template('aula4-html.html')
+  
 if(__name__ == '__main__'):
     app.run(debug=True)
     

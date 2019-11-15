@@ -15,28 +15,96 @@
             <hr> <br/>
             
             <div class="texto-curso">
-                <p>Para iniciarmos, precisamos entender o conceito e a importância dos algoritmos. Eles são uma sequência de passos lógicos 
-                    e ordenados visando  a resolução de um problema. Dessa forma, é perceptível que os algoritmos são a base da lógica de programação, 
-                    uma vez que esta é nada mais do que a organização coerente de instruções para o alcance de um objetivo. Além disso, está 
-                    cada vez mais comum a presença desses artificios computacionais no nosso dia-a-dia, aparecendo em aplicativos de smartphones,
-                    tablets, computadores e até em sistemas embarcados de micro-ondas, por exemplo.</p>
-            </div><br/><br/>
+                <p>Funções são um conjunto de códigos que visam um resultado. Dessa forma, há algumas funções nativas no Visualg que nos 
+                    auxiliará na construção do nossos códigos. Elas são utilizadas, geralmente, para diminuir o tamanho do código e torná-lo 
+                    mais fluído. Segue as mais utilizadas:</p>
+                
+            </div>
 
-            <center>
-                <iframe width="560" height="315" 
-                    src="https://www.youtube.com/embed/iEVLDKOLgQk" frameborder="0" controls allowfullscreen></iframe>
-            </center>
+            <div class="lista-curso">
+                <li><b>Escreva(" ") </b>: Mostra o texto que está escrito entre suas aspas na tela do computador.</li> <br/>
+                <li><b>Escreval(" ") </b>: Faz a mesma coisa que a função escreva, a única diferença é que ela pula uma linha.</li> <br/>
+                <li><b>Leia( VARIÁVEL ) </b>: Lê o que o usuário digitou e armazena na variável que está entre seus parênteses.</li> <br/>
+                <li><b><- </b>: Esse símbolo não é propriamente uma função, mas nos auxíliará bastante. Ele encaminha um valor para uma variável.</li> <br/>
+            </div>
+
+            <figure class="highlight">
+                <pre>
+                    <img src="/static/img-curso/encaminhar.png" alt=""> <br/>
+                </pre>
+            </figure> <br/>
 
             <br/>
             <h1 class="titulo_curso">VARIÁVEIS</h1>
             <hr> <br/>
             <div class="texto-curso">
-                    <p>O Visualg, programa gratuíto de edição, interpretação e execução de algoritmos, será utilizado para a codificação dos nossos 
-                        programas. Dessa forma é necessário efetuar a sua instalaçãO através do link abaixo, depois é só extrair 
-                        e executar. Lembrando que ele é compatível com versões superiores ao Windows 95 e com o Linux.</p> <br/>
+                <p>Agora que conhecemos as funções mais utilizadas no Portugol, precisamos conhecer as variáveis, para começar-mos 
+                    de vez a programar.</p> 
 
-                    <a href="https://sourceforge.net/projects/visualg30/" class="link"> DOWNLOAD DO VISUALG 3.0 </a>
-            </div> <br/>
+                <p>As variáveis são um recurso que nossos programas utilizam para armazenar dados na memória do computador para que 
+                    sejam manipulados quando conveniente. </p>
+
+                <p>Toda variável deve começar por uma letra e depois conter letras, números ou underline, até um limite de 30 
+                    caracteres. Posteriormente, são seguidas por dois pontos e seu tipo de dado. Elas são declaradas da seguinte forma:</p>
+            </div>
+
+            <figure class="highlight">
+                <pre>
+                    <img src="/static/img-curso/variaveis.png" alt=""> <br/>
+                </pre>
+            </figure> <br/>
+
+            <div class="texto-curso">
+                <p>Existem quatro tipos de dados primitivos, algumas linguagens subdividem estes tipos de dados em outros 
+                    de acordo com a capacidade de memória necessária para cada variável, mas no geral, os tipos de dados primitivos são:</p> <br/>        
+            </div> 
+
+            <div class="lista-curso">
+                <li><b>INTEIRO </b>: Este é o tipo de dados para valores numéricos negativos ou positivos, sem casas decimais. </li> <br/>
+
+                <figure class="highlight">
+                    <pre>
+                        <img src="/static/img-curso/varint.png" alt=""> <br/>
+                    </pre>
+                </figure> <br/>
+
+                <li><b>REAL </b>: Este é o tipo de dados para valores numéricos negativos ou positivos, com casas decimais. </li> <br/>
+
+                <figure class="highlight">
+                    <pre>
+                        <img src="/static/img-curso/varreal.png" alt=""> <br/>
+                    </pre>
+                </figure> <br/>
+
+                <li><b>LÓGICO </b>: Este tipo de dados pode assumir apenas dois valores VERDADEIRO ou FALSO. </li> <br/>
+
+                <figure class="highlight">
+                    <pre>
+                        <img src="/static/img-curso/varlogico.png" alt=""> <br/>
+                    </pre>
+                </figure> <br/>
+
+                <li><b>CARACETER</b>: Tipo de dados para variáveis que armazenam caracteres.</li> <br/>
+
+                <figure class="highlight">
+                    <pre>
+                        <img src="/static/img-curso/varcarac.png" alt=""> <br/>
+                    </pre>
+                </figure> <br/>
+
+            </div>
+
+            <div class="texto-curso">                    
+                <p> Outro tipo de variável bastante utilizada são os vetores. Um vetor ou variável bidimensional, é normalmente usadas 
+                    para armazenar várias variáveis do mesmo tipo, aumenta a eficiencia dos nossos programas. Por exemplo, para armazenar 
+                    o nome de 50 alunos, podemos criar apenas um vetor de tamanho 50 no lugar de cinquenta variáveis "aluno".</p> 
+            </div> 
+
+            <figure class="highlight">
+                <pre>
+                    <img src="/static/img-curso/vetor.png" alt=""> <br/>
+                </pre>
+            </figure> <br/>
 
             <br/>
             <h1 class="titulo_curso">ATIVIDADE</h1>
@@ -55,12 +123,9 @@
 
             <div class="texto-curso">
                 <p> Agora que você executou seu primeiro programa, podemos continuar.</p> 
-            </div>
+            </div> <br/>
+            <a href="{{url_for('aula3L')}}"><button class="button"><span>PRÓXIMA AULA </span></button></a>
+        </div>
 </section>
 
-<script>
-    function concluir(){
-        document.getElementById("button-curso").style.background = 'red';
-    }
-</script>
 {% endblock %}

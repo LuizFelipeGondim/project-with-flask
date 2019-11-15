@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-    VIRTUAL TEACHING
+    AULA 1 - LÓGICA
 {% endblock title %}
 
 {% block content %}
@@ -10,57 +10,61 @@
 </section>
 <section class = "gray_box">
     <div class="conteudo-column">
-            <br/>
-            <h1 class="titulo_curso">INTRODUÇÃO AO CURSO</h1>
-            <hr> <br/>
-            
-            <div class="texto-curso">
-                <p>Para iniciarmos, precisamos entender o conceito e a importância dos algoritmos. Eles são uma sequência de passos lógicos 
-                    e ordenados visando  a resolução de um problema. Dessa forma, é perceptível que os algoritmos são a base da lógica de programação, 
-                    uma vez que esta é nada mais do que a organização coerente de instruções para o alcance de um objetivo. Além disso, está 
-                    cada vez mais comum a presença desses artificios computacionais no nosso dia-a-dia, aparecendo em aplicativos de smartphones,
-                    tablets, computadores e até em sistemas embarcados de micro-ondas, por exemplo.</p>
-            </div><br/><br/>
+        <br/>
+        <h1 class="titulo_curso">INTRODUÇÃO AO CURSO</h1>
+        <hr> <br/>
+        
+        <div class="texto-curso">
+            <p>Para iniciarmos, precisamos entender o conceito e a importância dos algoritmos. Eles são uma sequência de passos lógicos 
+                e ordenados visando  a resolução de um problema. Dessa forma, é perceptível que os algoritmos são a base da lógica de programação, 
+                uma vez que esta é nada mais do que a organização coerente de instruções para o alcance de um objetivo. Além disso, está 
+                cada vez mais comum a presença desses artificios computacionais no nosso dia-a-dia, aparecendo em aplicativos de smartphones,
+                tablets, computadores e até em sistemas embarcados de micro-ondas, por exemplo.</p>
+        </div><br/><br/>
 
-            <center>
-                <iframe width="560" height="315" 
-                    src="https://www.youtube.com/embed/iEVLDKOLgQk" frameborder="0" controls allowfullscreen></iframe>
-            </center>
+        <center>
+            <iframe width="560" height="315" 
+                src="https://www.youtube.com/embed/iEVLDKOLgQk" frameborder="0" controls allowfullscreen></iframe>
+        </center>
 
-            <br/>
-            <h1 class="titulo_curso">PREPARANDO O AMBIENTE</h1>
-            <hr> <br/>
-            <div class="texto-curso">
-                    <p>O Visualg, programa gratuíto de edição, interpretação e execução de algoritmos, será utilizado para a codificação dos nossos 
-                        programas. Dessa forma é necessário efetuar a sua instalaçãO através do link abaixo, depois é só extrair 
-                        e executar. Lembrando que ele é compatível com versões superiores ao Windows 95 e com o Linux.</p> <br/>
+        <br/>
+        <h1 class="titulo_curso">PREPARANDO O AMBIENTE</h1>
+        <hr> <br/>
+        <div class="texto-curso">
+                <p>O Visualg, programa gratuíto de edição, interpretação e execução de algoritmos, será utilizado para a codificação dos nossos 
+                    programas. Dessa forma é necessário efetuar a sua instalaçãO através do link abaixo, depois é só extrair 
+                    e executar. Lembrando que ele é compatível com versões superiores ao Windows 95 e com o Linux.</p> <br/>
 
-                    <a href="https://sourceforge.net/projects/visualg30/" class="link"> DOWNLOAD DO VISUALG 3.0 </a>
-            </div> <br/>
+                <a href="https://sourceforge.net/projects/visualg30/" class="link"> DOWNLOAD DO VISUALG 3.0 </a>
+        </div> <br/>
 
-            <br/>
-            <h1 class="titulo_curso">NOSSO PRIMEIRO PROGRAMA</h1>
-            <hr> <br/>
-            <div class="texto-curso">
-                <p> Como foi dito anteriormente, podemos dizer que a programação é simplesmente ensinar uma máquina a executar tarefas 
-                    e tomar decisões. Para fixar essa ideia na cabeça de vocês, iremos fazer nosso primeiro programa utilizando o Visualg.
-                    Para entrar no mundo da programação com o pé direito, todo programador Júnior deve executar, a princípio, o famoso "Hello 
-                    World!!". Para isso, digite os comandos abaixo:</p> 
-            </div><br/>
-            
-            <div class="alert alert-primary" role="alert">
-                <p> NOTA: Não se preocupe com os comandos precedidos de "//", eles são apenas comentários, 
-                    por isso não causarão interferência na execução do código. </p> 
-            </div> <br/>
+        <br/>
+        <h1 class="titulo_curso">NOSSO PRIMEIRO PROGRAMA</h1>
+        <hr> <br/>
+        <div class="texto-curso">
+            <p> Como foi dito anteriormente, podemos dizer que a programação é simplesmente ensinar uma máquina a executar tarefas 
+                e tomar decisões. Para fixar essa ideia na cabeça de vocês, iremos fazer nosso primeiro programa utilizando o Visualg.
+                Para entrar no mundo da programação com o pé direito, todo programador Júnior deve executar, a princípio, o famoso "Hello 
+                World!!". Para isso, digite os comandos abaixo:</p> 
+        </div><br/>
+        
+        <div class="alert alert-primary" role="alert">
+            <p> NOTA: Não se preocupe com os comandos precedidos de "//", eles são apenas comentários, 
+                por isso não causarão interferência na execução do código. </p> 
+        </div> <br/>
 
-            <div class="texto-curso">
-                <p> Agora que você executou seu primeiro programa, podemos continuar.</p> 
-            </div>
+        <div class="texto-curso">
+            <p> Agora que você executou seu primeiro programa, podemos continuar.</p> 
+        </div> <br/>
+
+        <figure class="highlight">
+            <pre>
+                <img src="/static/img-curso/hello-world.png" alt=""> <br/>
+            </pre>
+        </figure> 
+        <a href="{{url_for('aula2L')}}"><button class="button"><span>PRÓXIMA AULA </span></button></a>
+    </div>
+    
 </section>
 
-<script>
-    function concluir(){
-        document.getElementById("button-curso").style.background = 'red';
-    }
-</script>
 {% endblock %}

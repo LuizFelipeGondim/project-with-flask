@@ -190,13 +190,6 @@ header #menu_icon:hover{
     display: flex;
     justify-content: center;
 }
-/*
-.gray_box div h1{
-    font-size: 220%;
-    font-family: roboto;
-    font-weight: 600;
-    color: #ffffff;
-}*/
 
 .card{
     
@@ -216,22 +209,23 @@ header #menu_icon:hover{
 
 .conteudo{
     min-height: 386px;
-    display: flex;
     padding: 30px;
     width: 70%;
-    align-content: space-around;
     position: relative;
-    background-color: #ffffff;
     margin: 15px 0px;
-}
+}  
 
 .conteudo-column{
     min-height: 386px;
     padding: 30px;
     width: 60%;
-    position: relative;
     background-color: #ffffff;
     margin: 0px 0px 15px 0px;
+}
+
+#autor{
+    display: flex;
+    flex-direction: row;
 }
 
 .titulo_curso{
@@ -239,35 +233,6 @@ header #menu_icon:hover{
     font-size: 220%;
     font-family: roboto;
     font-weight: 600;
-}
-
-hr{
-    background-color: #1f67ae;
-    height: 1.5px;
-}
-
-.flex-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.flex-container button{
-    background-color: #13378e;
-    color: #ffffff;
-    height: 80px;
-    width: 100%;
-    margin-bottom: 10px;
-    font-weight:600 ;
-}
-
-.flex-container button:hover{
-    opacity: 0.8;
-}
-
-.texto-curso{
-    text-align: justify;
-    text-indent:3em
 }
 
 /* ---------------------------------------------------------------------- */
@@ -444,10 +409,11 @@ button, .btnform:hover {
 }
 
 /* Extra style for the cancel button (red) */
-.cancelbtn, .cadastro{
+.cancelbtn, .verde{
   width: auto;
   padding: 10px 18px;
   background-color: #012530;
+  border: none;
 }
 
 .cancelbtn{
@@ -541,9 +507,121 @@ span.psw {
     flex-direction: column;
 } 
 .media div{
+    display: flex;
     align-items: center;
     flex-direction: column;
 }
+
+.media #caixa-verde{
+    width: 100%;
+    background-color: #0b4a6d;
+    padding: 10px 0px;
+}
+
+#caixa-verde form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-image{
+    border: none;
+    padding: 5px;
+    background-color: #052644;
+    color: #ffffff;
+}
+
+.input-image:nth-child(1){
+    width: 100px;
+}
+
+ /* ---------------------------------------------------------------------- */
+
+ /* css curso */
+
+ hr{
+    background-color: #1f67ae;
+    height: 1.5px;
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.flex-container button{
+    background-color: #13378e;
+    color: #ffffff;
+    height: 80px;
+    width: 100%;
+    margin-bottom: 10px;
+    font-weight:600 ;
+}
+
+.flex-container button:hover{
+    opacity: 0.8;
+}
+
+.texto-curso{
+    text-align: justify;
+    text-indent:3em
+}
+
+.lista-curso{
+    padding: 15px;
+}
+
+.link{
+    text-decoration: none;
+    color:#12333d;
+    font-weight: 600;
+}
+pre{
+    font-size: 2%;
+}
+
+
+ /* ---------------------------------------------------------------------- */
+
+ .button {
+    border-radius: 4px;
+    background-color: #0b4a6d;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button:hover span {
+    padding-right: 25px;
+  }
+  
+  .button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
 
 
 @media (max-width: 1040px){
@@ -636,6 +714,10 @@ span.psw {
   
     .container{
       background-color: #fff;
+    }
+    #autor img{
+        height: 70px;
+        width: 70px;
     }
   }
 

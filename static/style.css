@@ -449,6 +449,7 @@ span.psw {
     align-content: center;
 }
 
+
 /* Change styles for span and cancel button on extra small screens */
 
 
@@ -516,6 +517,19 @@ span.psw {
     width: 100%;
     background-color: #0b4a6d;
     padding: 10px 0px;
+    color:#fff;
+}
+
+.media #caixa-verde #Trocar_foto {
+    width: 100px;
+    color: #fff;
+}
+
+.media #caixa-verde #update{
+    width: 200px;
+  
+    border: 1px solid;
+    color: #fff;
 }
 
 #caixa-verde form{

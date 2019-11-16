@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}
+    AULA 3 - SISTEMAS OPERACIONAIS
+{% endblock title %}
+
+{% block content %}
+<section class="titulo_pag2" style="background-color: #1f4988;">
+    <figure><img src="static/img/logo-lp.png" style="width:300px; height: 300px; margin:auto"></figure>
+    <h1>O.S.</h1>
+</section>
+<section class = "gray_box">
+    <div class="conteudo-column">
+        <br/>
+        <h1 class="titulo_curso">SISTEMA DE ARQUIVOS</h1>
+        <hr> <br/>
+        
+        <div class="texto-curso">
+            <p>Teoricamente, um sistema de arquivo é um conjunto de estruturas lógicas que permite ao sistema operacional ter acesso e 
+                controlar os dados gravados no disco. Cada sistema operacional lida com um sistema de arquivos diferente e cada sistema 
+                de arquivos possui as suas peculiaridades, como limitações, qualidade, velocidade, gerenciamento de espaço, entre outras 
+                características. É o sistema de arquivos que define como os bytes que compõem um arquivo serão armazenados no disco e de 
+                que forma o sistema operacional terá acesso aos dados. Suas principais funções são o gerenciamento de arquivos, a 
+                navegação pela estrutura de diretórios, o acesso a arquivos e pastas, a recuperação de dados e o armazenamento de dados.</p>
+
+            <p>Podemos classificar os sistemas de arquivos em uso atualmente em quatro grandes grupos:</p></br>
+        </div>
+
+        <div class="lista-curso">
+            <li><b>Sistemas de arquivos de Disco </b>: É um sistema que aproveita a capacidade da mídia de armazenamento em disco para endereçar 
+                dados aleatoriamente em um curto período de tempo.</li> <br/>
+
+            <li><b>Sistemas de arquivos de Redes </b>: É um sistema de arquivos que atua como um cliente para um protocolo de acesso remoto a 
+                arquivos, fornecendo acesso a arquivos em um servidor.</li><br/>
+
+            <li><b>Sistemas de arquivos de Bancos de Dados </b>: Sistema onde os arquivos são identificados por suas características, como tipo de 
+                arquivo, tópico, autor ou metadados ricos semelhantes.</li> <br/>
+
+            <li><b>Sistemas de arquivos de propósito especial </b>: São os demais sistemas de arquivos.</li><br/>
+        </div>    
+     
+        <a href="{{url_for('aula4SO')}}"><button class="button"><span>PRÓXIMA AULA </span></button></a>
+    </div>
+    
+</section>
+
+{% endblock %}

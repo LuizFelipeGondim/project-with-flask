@@ -131,35 +131,51 @@ def apoie():
 
 @app.route('/aula1-logica')
 def aula1L():
-    return render_template('aula1-logica.html')
+    return render_template('cursos/aula1-logica.html')
 
 @app.route('/aula2-logica')
 def aula2L():
-    return render_template('aula2-logica.html')
+    return render_template('cursos/aula2-logica.html')
 
 @app.route('/aula3-logica')
 def aula3L():
-    return render_template('aula3-logica.html')
+    return render_template('cursos/aula3-logica.html')
 
 @app.route('/aula4-logica')
 def aula4L():
-    return render_template('aula4-logica.html')
+    return render_template('cursos/aula4-logica.html')
 
 @app.route('/aula1-html')
 def aula1H():
-    return render_template('aula1-html.html')
+    return render_template('cursos/aula1-html.html')
 
 @app.route('/aula2-html')
 def aula2H():
-    return render_template('aula2-html.html')
+    return render_template('cursos/aula2-html.html')
 
 @app.route('/aula3-html')
 def aula3H():
-    return render_template('aula3-html.html')
+    return render_template('cursos/aula3-html.html')
 
 @app.route('/aula4-html')
 def aula4H():
-    return render_template('aula4-html.html')
+    return render_template('cursos/aula4-html.html')
+  
+@app.route('/aula1-so')
+def aula1SO():
+    return render_template('cursos/aula1-so.html')
+
+@app.route('/aula2-so')
+def aula2SO():
+    return render_template('cursos/aula2-so.html')
+
+@app.route('/aula3-so')
+def aula3SO():
+    return render_template('cursos/aula3-so.html')
+
+@app.route('/aula4-so')
+def aula4SO():
+    return render_template('cursos/aula4-so.html')
   
 if(__name__ == '__main__'):
     app.run(debug=True)

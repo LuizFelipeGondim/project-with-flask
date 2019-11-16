@@ -4,25 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Login</title>
+        <title> Login </title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}">
         <link rel="icon" type="imagem/png" href="static/img/meufavicon.png" />
     </head>
     <body style="background:  #050a14">
-
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                <div class="alert alert-warning"
-                    <ul class=flashes>
-                    {% for message in messages %}
-                    <li>{{ message }}</li>
-                    {% endfor %}
-                    </ul>
-                </div>
-            {% endif %}
-        {% endwith %}
 
         <div id="cadastro_flex">
                 <form action="/login" method="POST">  
@@ -38,14 +26,9 @@
                 
                         {{form.entrar(class_="btnform")}}
                         
-                        <label>
-                            {{form.remember}} Lembre-me
-                        </label>
-                        
                         <div class="container" style="background-color:#f1f1f1">
                                 <a href="/index"><button type="button" class="cancelbtn" action="/index">Cancelar</button></a>
-                                <a href="/cadastro"><button type="button" class="cadastro">Cadastre-se</button></a>
-                                <span class="psw">Esqueceu a <a href="#">senha?</a></span>
+                                <a href="/cadastro"><button type="button" class="verde">Cadastre-se</button></a>
                         </div> 
                     </div>
                      

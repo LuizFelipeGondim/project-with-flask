@@ -1,21 +1,30 @@
 {% extends 'base.html' %}
-
+{% block title %}
+    VIRTUAL TEACHING
+{% endblock title %}
 {% block content %}
 
 <section class="titulo_pag">
-  <figure><img src="static/img/vt.png" style="width:300px; height: 300px; margin:auto"></figure>
+  <figure>
+    <img src="static/img/vt.png" style="width:300px; height: 300px; margin:auto">
+  </figure>
   <h1><span class="tp"> VIRTUAL </span> <span id="t"> TEACHING </span></h1>
 </section>
 
 <section class = "gray_box">
   <div class="conteudo">
-      <p>O curso de Lógica de Programação é recomendado para todos aqueles que querem iniciar nesse no mundo, pois fornecerá uma base sólida que facilitará a aprendizagem das demais linguagens do mercado, como C, Java, Python, entre outros. 
-        Será utilizado o Portugol para demonstrar a lógica básica e as estruturas mais utilizadas no universo da programação. Essa pseudo-linguagem será utilizada porque ela é o que há de mais próximo do português, o que facilita na aprendizagem do aluno.
-        INTRODUÇÃO PROGRAMAÇÃO
-      </p>
-      <p> Para iniciarmos, precisamos entender o conceito e a importância dos algoritmos. Eles são uma sequência de passos lógicos e ordenados visando  a resolução de um problema. Dessa forma, é perceptível que os algoritmos são a base da lógica de programação, 
-        uma vez que esta é nada mais do que a organização coerente de instruções para o alcance de um objetivo. Além disso, está cada vez mais comum a presença desses artificios computacionais no nosso dia-a-dia, aparecendo em aplicativos de smartphones, tablets e computadores e até em sistemas embarcados de micro-ondas, por exemplo.
-      </p>
+      <br/>
+      <h1 class="titulo_curso">IMPORTÂNCIA DA INFORMÁTICA</h1>
+      <div class="texto-curso">
+          <br/><br/>
+          <p>O curso de Lógica de Programação é recomendado para todos aqueles que querem iniciar nesse no mundo, pois fornecerá uma 
+              base sólida que facilitará a aprendizagem das demais linguagens do mercado, como C, Java, Python, entre outros. </p>
+
+          <p> Será utilizado o Portugol para demonstrar a lógica básica e as estruturas mais utilizadas no universo da programação. 
+              Essa pseudo-linguagem será utilizada porque ela é o que há de mais próximo do português, o que facilita na aprendizagem 
+              do aluno.</p>
+      </div>
+      
   </div>
 </section>
 
@@ -65,14 +74,21 @@
 
 <section class = "gray_box">
     <div class="conteudo">
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        min-height: 386px;
-        padding: 30px 0;
+      <div id="autor">
+
+          <figure>
+              <img src="static/img/autor.jpeg" class="rounded-circle account-img">
+          </figure>
+
+          <p> Será utilizado o Portugol para demonstrar a lógica básica e as estruturas mais utilizadas no universo da programação. 
+              Essa pseudo-linguagem será utilizada porque ela é o que há de mais próximo do português, o que facilita na aprendizagem 
+              do aluno.</p>
+
+      </div>
     </div>
 </section>
+{% block content_home %}
 
-    
+{% endblock %}
 
-    {% endblock content %}
+{% endblock content %}

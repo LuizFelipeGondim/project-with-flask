@@ -1,44 +1,41 @@
 {% extends 'index.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
 {% block title %}
     VIRTUAL TEACHING
 {% endblock title %}
-{% block conteudo %}
-  
-      
+
+{% block content_home %}
+
 <div id="mySidepanel" class="sidepanel">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="content-section">
-        <div class="media">
-            <img class="rounded-circle account-img" style="height: 70px; width:70px" src="{{ image_file }}" alt="">
-            <div>
-                <h2 class="account-heading">{{ current_user.username }}</h2>
-                <p class="text-secondary">{{ current_user.email}}</p>
-            </div>
-            <div id="caixa-verde"> 
-                <form action="" method="POST" enctype="multipart/form-data">
-                    {{form.picture(class_="input-image", style='width: 100px')}} <br/>
-                    {{form.a_picture(class_="input-image")}}
-                </form> 
-                
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="content-section">
+            <div class="media">
+                {% if image %}
+                <img class="rounded-circle account-img" style="height: 70px; width:70px"  src="{{ url_for('static', filename=image) }}">
+                {% endif %}
+                <div>
+                    <h2 class="account-heading">{{ current_user.username }}</h2>
+                    <p class="text-secondary">{{ current_user.email}}</p>
+                </div>
+                <div id="caixa-verde"> 
+                        {{wtf.quick_form(form, enctype='multipart/form-data') }}
+                     
+                </div>
             </div>
         </div>
-    </div>
-     
-    <a href="/logout" onclick="closeNav()">sair</a>
-  </div>
-  
-  
-  
-
+         
+        <a href="/logout" onclick="closeNav()">sair</a>
+      </div>
 <script type="text/javascript">
-function openNav() {
-    document.getElementById("mySidepanel").style.width = "250px";
-    }
-
-    /* Set the width of the sidebar to 0 (hide it) */
-    function closeNav() {
-    document.getElementById("mySidepanel").style.width = "0";
-    } 
-</script>
+    function openNav() {
+        document.getElementById("mySidepanel").style.width = "250px";
+        }
+    
+        /* Set the width of the sidebar to 0 (hide it) */
+        function closeNav() {
+        document.getElementById("mySidepanel").style.width = "0";
+        } 
+    </script>
 
 {% endblock %}

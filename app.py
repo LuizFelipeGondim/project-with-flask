@@ -102,13 +102,12 @@ def home():
     form = UpdateImage()
     if form.validate_on_submit():
         image = 'img/profile_pics/' + form.picture.data.filename
-        form.picture.data.save(os.path.join(app.static_folder, image))
-        current_user.query.update({ 'image_file': form.picture.data.filename })
+        form.Trocar_foto.data.save(os.path.join(app.static_folder, image))
+        current_user.query.update({ 'image_file': form.Trocar_foto.data.filename })
         db.session.commit()
 
     user = Usuario.query.filter_by(email=str(current_user.email)).first()
     imagem = 'img/profile_pics/' + user.image_file
-    print(imagem)
     return render_template('home.html', form=form, image=imagem)
 
 @app.route('/sistemas-operacionais')

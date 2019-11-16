@@ -19,4 +19,4 @@ class LoginForm(FlaskForm):
 
 class UpdateImage(FlaskForm):
     picture = FileField(validators=[FileAllowed(['jpg', 'png'])])
-    a_picture = SubmitField('Alterar Imagem')
+    update = SubmitField('Atualizar foto')

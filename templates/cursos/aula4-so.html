@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %}
+    AULA 4 - SISTEMAS OPERACIONAIS
+{% endblock title %}
+
+{% block content %}
+<section class="titulo_pag2" style="background-color: #1f4988;">
+    <figure><img src="static/img/logo-lp.png" style="width:300px; height: 300px; margin:auto"></figure>
+    <h1>O.S.</h1>
+</section>
+<section class = "gray_box">
+    <div class="conteudo-column">
+        <br/>
+        <h1 class="titulo_curso">GERÊNCIA DE DISPOSITIVOS E/S</h1>
+        <hr> <br/>
+        
+        <div class="texto-curso">
+            <p>	O Gerenciador de Dispositivos de um computador monitora todos os dispositivos, canais e unidades de controle. Sua 
+                tarefa é escolher a forma mais adequada para a alocação de todos os dispositivos de um sistema, de acordo com uma 
+                política de programação de execução (scheduling) definida pelos projetistas do sistema. O Gerenciador faz a alocação, 
+                inicia a operação e, por fim, desaloca o dispositivo.</p>
+        </div><br/>
+
+        <br/>
+        <h1 class="titulo_curso">ETAPAS PARA O ACESSO A DISPOSITIVOS</h1>
+        <hr> <br/>
+        
+        <div class="texto-curso">
+            <p>	Para ocorrer o acesso a dispositivos, os seguintes passos devem ser cumpridos:</p>
+        </div><br/>
+
+        <div class="lista-curso">
+            <ol>
+                <li> O Gerenciador de Dispositivos recebe os impulsos elétricos emitidos através do teclado, decodifica as teclas 
+                    pressionadas para formar o comando e o envia para a Interface de Comandos do Usuário, onde o comando é válido 
+                    pelo Gerenciador da Unidade de Processamento.</li> <br/>
+
+                <li>O Gerenciador da Unidade de Processamento envia uma mensagem de reconhecimento, a qual é exibida no monitor 
+                    de vídeo para que o digitador saiba que o comando foi enviado.</li><br/>
+
+                <li>Quando o Gerenciador da Unidade de Processamento recebe o comando, ele determina se o programa deve ser 
+                    recuperado de algum meio de armazenamento ou se já está em memória. Em seguida, notifica o gerenciador 
+                    apropriado.</li> <br/>
+
+                <li>Se o programa estiver armazenado, o Gerenciador de Arquivos deve identificar sua localização exata no disco, 
+                    passar essa informação para o Gerenciador de Dispositivos, o qual recupera e envia o programa para o Gerenciador 
+                    de Memória. Este, por sua vez, deve encontrar espaço para o programa e gravar em memória sua exata localização.</li><br/>
+
+                <li>Assim que o programa estiver em memória, o Gerenciador de Memória deve monitorar sua localização e seu progresso, 
+                    à medida que é executado pelo Gerenciador da Unidade de Processamento.</li><br/>
+
+                <li>Uma vez terminada a execução, o programa deve enviar uma mensagem de término ao Gerenciador da Unidade de Processamento.</li> <br/>
+
+                <li>Por fim, o Gerenciador da Unidade de Processamento deve repassar a mensagem de término ao Gerenciador de Dispositivos, 
+                    que deverá exibi-la no monitor de vídeo para que o usuário possa vê-la.</li><br/>
+            </ol>
+        </div>
+
+        <br/>
+        <h1 class="titulo_curso">DRIVERS</h1>
+        <hr> <br/>
+        <div class="texto-curso">
+            <p>Um driver é um software que permite que o computador se comunique com o hardware ou com os dispositivos. Esse software 
+                tem como função implementar a comunicação do subsistema de entrada e saida com os dispositivos, através de controladores. 
+                Os drivers tratam de aspectos particulares dos dispositivos.</p>
+
+            <p>Recebem comandos gerais sobre acessos aos dispositivos e traduzem para comandos específicos, que poderão ser executados 
+                pelos controladores. Além disso, o driver pode realizar outras funções, como a inicialização do dispositivo e seu 
+                gerenciamento.</p> <br/>
+
+        </div> <br/>
+
+        <a href="{{url_for('home')}}"><button class="button"><span>FINALIZAR</span></button></a>
+    </div>
+    
+</section>
+
+{% endblock %}

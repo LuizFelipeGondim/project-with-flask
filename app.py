@@ -91,10 +91,7 @@ def logout():
 @app.route('/')
 @app.route('/index')
 def index():
-    if current_user.is_anonymous:
         return render_template('index.html')
-    else:
-        return render_template('home.html')
     
 
 @app.route('/home', methods=['GET', 'POST'])

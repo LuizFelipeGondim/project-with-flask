@@ -49,18 +49,10 @@
             <nav id="menu">
             
                 <ul>
-                    <li><a href="/apoie">APOIE-NOS</a></li>
-                    {% if current_user.is_authenticated %}
-                        <li><a href="/home">HOME</a></li>
-                    {% else %} 
-                        <li><a href="/index">HOME</a></li>
-                    {% endif %} 
-                   
-                    {% if current_user.is_authenticated %}
-                        {% block perfil %}{% endblock %}    
-                    {% else %} 
-                        <li><a href="/login">LOGIN</a></li>
-                    {% endif %}   
+                    <li><a href="/apoie">APOIE-NOS</a></li> 
+                    <li><a href="/index">HOME</a></li>
+                    {% block botao %}
+                    {% endblock %} 
                     <li>
                         <form action="https://www.google.com/search">
                             <input type="text" name="q" placeholder="  Search">
@@ -79,14 +71,14 @@
             
                         
             <div id="footer-center">
-                    <div class="footer-itens">
-                            <div class="icon-bar">
-                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a> </br>
-                                <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
-                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-                            </div>
+                <div class="footer-itens">
+                    <div class="icon-bar">
+                        <a href="https://www.facebook.com/" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a> </br>
+                        <a href="https://www.youtube.com/" class="youtube" target="_blank"><i class="fa fa-youtube"></i></a>
+                        <a href="https://twitter.com/" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
                     </div>
+                </div>
 
                         
                 <div class="footer-itens" style="margin-top:50px;">
@@ -102,11 +94,8 @@
                         <center>
                             <img src="static/img/footer.png" alt="logo do IF">
                         </center>
-                        <p>lkeldwemflmwlefmlmwelfmlwmelfmlwmelfmkmflwmelfmlwmeflmwlf
-                            wfkẃkefẃkefḱwékfpkwefkw
-                            wefḱẃekfẃe
-                            fkwefkẃeokf
-                            wefkẃkefkwekwéfok
+                        <p>Página voltada ao ensino de algumas áreas da informática,
+                            visando o auxílio daqueles que iniciam nesse mundo. 
                         </p>
                  </div>
             </div>
@@ -116,5 +105,49 @@
             </div>
     
         </footer>
+
+            <div id="mySidepanel" class="sidepanel">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="content-section">
+                    <div class="media">
+                        {% if image %}
+                        <img class="rounded-circle account-img" style="height: 70px; width:70px"  src="{{ url_for('static', filename=image) }}">
+                        {% endif %}
+                        <div>
+                            <h2 class="account-heading">{{ current_user.username }}</h2>
+                            <p class="text-secondary">{{ current_user.email }}</p>
+                        </div>
+                        {% block caixa %} 
+                        {% endblock  %}
+                        <a href="/logout" onclick="closeNav()" style="font-size: 15px; margin-left: -30px;">SAIR</a>
+                    </div>
+                </div>
+                
+               
+            </div>
+
+        <script type="text/javascript">
+            function openNav() {
+                document.getElementById("mySidepanel").style.width = "250px";
+            }
+            
+            function closeNav() {
+                document.getElementById("mySidepanel").style.width = "0";
+            } 
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                content.style.display = "none";
+                } else {
+                content.style.display = "block";
+                }
+            });
+            }
+        </script>
     </body>
 </html>

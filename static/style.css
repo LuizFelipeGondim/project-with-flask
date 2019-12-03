@@ -168,7 +168,7 @@ header #menu_icon:hover{
 /* conteúdo */
 
 #cursos{
-    justify-content: none;
+    
     width: 100%;
     background-color: #F4F6F7;
     display:flex;
@@ -199,7 +199,6 @@ header #menu_icon:hover{
 }
 
 .conteudo{
-    min-height: 386px;
     padding: 30px;
     width: 70%;
     position: relative;
@@ -214,9 +213,18 @@ header #menu_icon:hover{
     margin: 0px 0px 15px 0px;
 }
 
-#autor{
+.autor{
     display: flex;
     flex-direction: row;
+    align-items: center;
+}
+
+.autor div{
+    display: none;
+}
+
+.autor p, .autor h4{
+    margin-left: 15px;
 }
 
 .titulo_curso{
@@ -443,7 +451,20 @@ span.psw {
 
 /* Change styles for span and cancel button on extra small screens */
 
-
+.imagem_index {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:50px;
+    font-weight:600;
+  }
 
 /* ---------------------------------------------------------------------- */
 
@@ -515,9 +536,9 @@ span.psw {
 
 .center-itens{
     display: flex;
-    justify-content: space-between !important;
+    justify-content: center;
     width: 60%;
-    background-color: #0579ff;
+    background-color: #10bbe2;
 }
  
  /* ---------------------------------------------------------------------- */
@@ -598,7 +619,7 @@ span.psw {
 
 .texto-curso{
     text-align: justify;
-    text-indent:3em
+    text-indent:2em
 }
 
 .lista-curso{
@@ -656,11 +677,41 @@ pre{
     right: 0;
   }
 
+  .collapsible {
+    background-color: #13378e;
+    cursor: pointer;
+    padding: 12px;
+    width: 150px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    color: #fff;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .cont {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
 
 @media (max-width: 1040px){
     .conteudo-column iframe{
         width: 300px;
         height: 169px;
+    }
+}
+
+@media (max-width: 950px){
+    .imagem_index{
+        display: none;
     }
 }
 
@@ -708,7 +759,13 @@ pre{
     }
 
     .titulo_pag_apoie{
-        display: none;
+        font-size: 8px;
+    }
+
+    .center-itens figure img{
+        height: 200px;
+        width: 200px;
+        margin-top:-30px ;
     }
 
     #cursos{
@@ -741,6 +798,9 @@ pre{
       display: block;
       float: none;
     }
+    .collapsible {
+        width: 100%;
+    }
     .cancelbtn, .cadastro, .signupbtn {
       width: 100%;
     }
@@ -761,4 +821,22 @@ pre{
     .footer-itens {
         margin-left:-50px;
     }
+
+    .autor{
+        flex-direction: column;
+    }
+
+    .autor div h4{
+        display: block;
+    }
+
+    .autor div {
+        display: flex ;
+        justify-content: center;
+    }
+
+    .autor p, .autor div h4{
+        margin: 0px;
+    }
   }
+

@@ -1,5 +1,4 @@
 import os
-
 from functools import wraps
 from flask import Flask, render_template, redirect, url_for, request, session
 from forms import LoginForm, CadastraUsuarioForm, UpdateImage
@@ -7,7 +6,6 @@ from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, login_user, logout_user, login_required,current_user, UserMixin
 from flask_bootstrap import Bootstrap
-
 
 app = Flask(__name__)
 
@@ -18,10 +16,12 @@ app.config['SECRET_KEY'] = '8d39132b1bfec3225ad1aa46df64deee'
 db = SQLAlchemy(app)
 login_manager = LoginManager(app)
 Bootstrap(app)
+ 
 
 @login_manager.user_loader
 def load_user(user_id):
     return Usuario.query.filter_by(id=user_id).first()
+
 
 class Usuario(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True) 
@@ -30,17 +30,25 @@ class Usuario(db.Model, UserMixin):
     senha = db.Column(db.String(80), nullable = False)
     image_file = db.Column(db.String(20), nullable=False, default='default.png')
 
-'''
+    def __repr__(self):
+        return '<User %r>' % self.username
+
+
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
-        if 'logged_in' in user_id:
+        if 'logged_in' in session:
             return f(*args, **kwargs)
         else:
-            return redirect(url_for('login', next=request.url))
-        
+            return redirect(url_for('login'))
     return wrap
-'''
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    logout_user()   
+    return redirect(url_for('index'))
 
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
@@ -71,52 +79,50 @@ def cadastro():
 def login():
     form = LoginForm()
     if current_user.is_authenticated:
-        return redirect(url_for('home'))
+        return redirect(url_for('index'))
     if form.validate_on_submit():
         user = Usuario.query.filter_by(email=form.email.data).first()
         if user and check_password_hash(user.senha, form.senha.data):
             login_user(user)
-            return redirect(url_for('home'))
+            session['logged_in'] = True
+            return redirect(url_for('index'))
         else:
             return redirect(url_for('login'))
 
     return render_template('login.html', form=form) 
 
-@app.route('/logout')
-def logout():
-    session.clear()
-    logout_user()   
-    return redirect(url_for('index'))
-
-@app.route('/')
-@app.route('/index')
-def index():
-        return render_template('index.html')
     
-
-@app.route('/home', methods=['GET', 'POST'])
-def home():
+@app.route('/')
+@app.route('/index', methods=['GET', 'POST'])
+def index():
+    imagem = None
     form = UpdateImage()
     if form.validate_on_submit():
-        image = 'img/profile_pics/' + form.picture.data.filename
+        image = 'img/profile_pics/' + form.Trocar_foto.data.filename
         form.Trocar_foto.data.save(os.path.join(app.static_folder, image))
-        current_user.query.update({ 'image_file': form.Trocar_foto.data.filename })
+        Usuario.query.filter_by(id=current_user.id).update({ 'image_file': form.Trocar_foto.data.filename })
         db.session.commit()
 
-    user = Usuario.query.filter_by(email=str(current_user.email)).first()
-    imagem = 'img/profile_pics/' + user.image_file
-    return render_template('home.html', form=form, image=imagem)
+    if current_user.is_authenticated:
+        user = Usuario.query.filter_by(email=str(current_user.email)).first()
+        imagem = 'img/profile_pics/' + user.image_file
+
+    return render_template('index.html', form=form, image=imagem)
+
 
 @app.route('/sistemas-operacionais')
+@login_required
 def sistemas():
     return render_template('sistemas-operacionais.html')
 
-@app.route('/logica')
+
+@app.route('/logica', methods=['GET', 'POST'])
+@login_required
 def logica():
     return render_template('programacao.html')
 
 
-@app.route('/html')
+@app.route('/html', methods=['GET', 'POST'])
 @login_required
 def html():
     return render_template('web.html')
@@ -126,50 +132,62 @@ def apoie():
     return render_template('apoie.html')
 
 @app.route('/aula1-logica')
+@login_required
 def aula1L():
     return render_template('cursos/aula1-logica.html')
 
 @app.route('/aula2-logica')
+@login_required
 def aula2L():
     return render_template('cursos/aula2-logica.html')
 
 @app.route('/aula3-logica')
+@login_required
 def aula3L():
     return render_template('cursos/aula3-logica.html')
 
 @app.route('/aula4-logica')
+@login_required
 def aula4L():
     return render_template('cursos/aula4-logica.html')
 
 @app.route('/aula1-html')
+@login_required
 def aula1H():
     return render_template('cursos/aula1-html.html')
 
 @app.route('/aula2-html')
+@login_required
 def aula2H():
     return render_template('cursos/aula2-html.html')
 
 @app.route('/aula3-html')
+@login_required
 def aula3H():
     return render_template('cursos/aula3-html.html')
 
 @app.route('/aula4-html')
+@login_required
 def aula4H():
     return render_template('cursos/aula4-html.html')
   
 @app.route('/aula1-so')
+@login_required
 def aula1SO():
     return render_template('cursos/aula1-so.html')
 
 @app.route('/aula2-so')
+@login_required
 def aula2SO():
     return render_template('cursos/aula2-so.html')
 
 @app.route('/aula3-so')
+@login_required
 def aula3SO():
     return render_template('cursos/aula3-so.html')
 
 @app.route('/aula4-so')
+@login_required
 def aula4SO():
     return render_template('cursos/aula4-so.html')
   

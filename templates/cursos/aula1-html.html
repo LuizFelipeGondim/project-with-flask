@@ -4,7 +4,7 @@
 {% endblock title %}
 
 {% block content %}
-<section class="titulo_pag2" style="background-color: #295dba;">
+<section class="titulo_pag2" style="background-color: #0275b8;">
     <figure><img src="static/img/logo-web.png" style="width:300px; height: 300px; margin:auto"></figure>
     <h1>HTML</h1>
 </section>
@@ -26,7 +26,7 @@
             
         <figure class="highlight">
             <pre>
-                <img src="/static/img-curso/tag-exemplo.png" alt=""> <br/>
+                <img src="/static/img/img-curso/tag-exemplo.png" alt=""> <br/>
             </pre>
         </figure> <br/>
 
@@ -41,11 +41,9 @@
 
         <figure class="highlight">
             <pre>
-                <img src="/static/img-curso/estrutura.png" alt=""> <br/>
+                <img src="/static/img/img-curso/estrutura.png" alt=""> <br/>
             </pre>
         </figure> <br/>
-
-    
 
         <div class="lista-curso">
             <li><b> DOCTYPE html5 </b>: A tag !DOCTYPE informa ao browser a versão do HTML que está sendo utilizada no documento. 
@@ -63,6 +61,24 @@
 
             <li><b> body </b>: Finalmente, a tag que contêm a parte vísivel de uma página.</li> <br/>  
         </div>
+
+        <br/>
+        <h1 class="titulo_curso">EXERCÍCIO</h1>
+        <hr> <br/>
+
+        <div class="lista-curso">
+            <ol>
+                <li>O que é html? E qual as tags básicas para a estrutura principal? <br/> 
+                    <button type="button" class="collapsible">Resposta</button>
+                    <div class="cont">
+                        <p> <br/> HTML é uma linguagem de marcação que tem o objetivo de exibir, estruturar e organizar documentos web através de
+                        marcações especiais denominadas tags, para que possam ser exibidos de forma apropriada por meio dos browsers quando um
+                        usuário solicita uma página. As tags básicas são: html, head, body e title.</p>
+                    </div></li> 
+            </ol>  
+        </div>
+
+
         <a href="{{url_for('aula2H')}}"><button class="button"><span>PRÓXIMA AULA </span></button></a>
     </div>    
         

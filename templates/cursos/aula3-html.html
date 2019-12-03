@@ -4,7 +4,7 @@
 {% endblock title %}
 
 {% block content %}
-<section class="titulo_pag2" style="background-color: #295dba;">
+<section class="titulo_pag2" style="background-color: #0275b8;">
     <figure><img src="static/img/logo-web.png" style="width:300px; height: 300px; margin:auto"></figure>
     <h1>HTML</h1>
 </section>
@@ -24,7 +24,7 @@
             
             <figure class="highlight">
                 <pre>
-                    <img src="/static/img-curso/video.png" alt=""> <br/>
+                    <img src="/static/img/img-curso/video.png" alt=""> <br/>
                 </pre>
             </figure><br/>
 
@@ -32,7 +32,7 @@
             
             <figure class="highlight">
                 <pre>
-                    <img src="/static/img-curso/audio.png" alt=""> <br/>
+                    <img src="/static/img/img-curso/audio.png" alt=""> <br/>
                 </pre>
             </figure><br/>
 
@@ -40,7 +40,7 @@
                 e o segundo para definir um texto alternativo para imagem.</li> <br/>
             <figure class="highlight">
                 <pre>
-                    <img src="/static/img-curso/img.png" alt=""> <br/>
+                    <img src="/static/img/img-curso/img.png" alt=""> <br/>
                 </pre>
             </figure><br/>
 
@@ -59,7 +59,7 @@
             
         <figure class="highlight">
             <pre>
-                <img src="/static/img-curso/link.png" alt=""> <br/>
+                <img src="/static/img/img-curso/link.png" alt=""> <br/>
             </pre>
         </figure> <br/>
 
@@ -70,19 +70,38 @@
 
         <figure class="highlight">
             <pre>
-                <img src="/static/img-curso/lista.png" alt=""> <br/>
+                <img src="/static/img/img-curso/lista.png" alt=""> <br/>
             </pre>
         </figure>
 
         <br/>
-        <h1 class="titulo_curso">ATIVIDADE</h1>
+        <h1 class="titulo_curso">EXERCÍCIOS</h1>
         <hr> <br/>
-        <div class="texto-curso">
-            <p> Como foi dito anteriormente, podemos dizer que a programação é simplesmente ensinar uma máquina a executar tarefas 
-                e tomar decisões. Para fixar essa ideia na cabeça de vocês, iremos fazer nosso primeiro programa utilizando o Visualg.
-                Para entrar no mundo da programação com o pé direito, todo programador Júnior deve executar, a princípio, o famoso "Hello 
-                World!!". Para isso, digite os comandos abaixo:</p> 
-        </div><br/>
+
+        <div class="lista-curso">
+            <ol>
+                <li>Quais as tags usadas para inserir imagem, vídeo, áudio e link em uma página html? <br/>
+                    <button type="button" class="collapsible">Resposta</button>
+                    <div class="cont">
+                        <p> <br/> Imagem: &lt;img src=&quot; nomedaimagem.jpg &quot; alt=&quot; descrição da
+                            imagem &quot;&gt; <br/> <br/>
+                            Video: &lt;video width=&quot;320&quot; height=&quot;240&quot; controls&gt;
+                            &lt;source src=&quot;video/movie.mp4&quot; type=&quot;video/mp4&quot;&gt;
+                            &lt;/video&gt;<br/> <br/>
+                            Áudio: &lt;audio controls&gt;
+                            &lt;source src=&quot;horse.ogg&quot; type=&quot;audio/ogg&quot;&gt;
+                               &lt;source src=&quot;horse.mp3&quot; type=&quot;audio/mpeg&quot;&gt;
+                            &lt;/audio&gt;</p>
+                    </div>
+                </li> <br/>
+
+                <li>Insira uma imagem com largura de 500px e altura 600px..</li> <br/>
+
+                <li>Insira um vídeo.</li> <br/>
+
+                <li>Adicione uma imagem linkável.</li> <br/>
+            </ol>  
+        </div>
         <a href="{{url_for('aula4H')}}"><button class="button"><span>PRÓXIMA AULA </span></button></a>
     </div>
 </section>

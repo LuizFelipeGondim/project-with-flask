@@ -4,7 +4,7 @@
 {% endblock title %}
 
 {% block content %}
-<section class="titulo_pag2" style="background-color: #295dba;">
+<section class="titulo_pag2" style="background-color: #0275b8;">
     <figure><img src="static/img/logo-web.png" style="width:300px; height: 300px; margin:auto"></figure>
     <h1>HTML</h1>
 </section>
@@ -43,7 +43,7 @@
 
         <figure class="highlight">
             <pre>
-                <img src="/static/img-curso/textarea.png" alt=""> <br/>
+                <img src="/static/img/img-curso/textarea.png" alt=""> <br/>
             </pre>
         </figure> <br/>
 
@@ -57,19 +57,33 @@
 
         <figure class="highlight">
             <pre>
-                <img src="/static/img-curso/div.png" alt=""> <br/>
+                <img src="/static/img/img-curso/div.png" alt=""> <br/>
             </pre>
         </figure> <br/>
 
-        <h1 class="titulo_curso">ATIVIDADE FINAL</h1>
+        <br/>
+        <h1 class="titulo_curso">EXERCÍCIOS</h1>
         <hr> <br/>
-        <div class="texto-curso">
-            <p> Como foi dito anteriormente, podemos dizer que a programação é simplesmente ensinar uma máquina a executar tarefas 
-                e tomar decisões. Para fixar essa ideia na cabeça de vocês, iremos fazer nosso primeiro programa utilizando o Visualg.
-                Para entrar no mundo da programação com o pé direito, todo programador Júnior deve executar, a princípio, o famoso "Hello 
-                World!!". Para isso, digite os comandos abaixo:</p> 
-        </div><br/>
-        <a href="{{url_for('home')}}"><button class="button"><span>FINALIZAR</span></button></a>
+
+        <div class="lista-curso">
+            <ol>
+                <li>Para que serve a tag div? E como é usada?<br/>
+                    <button type="button" class="collapsible">Resposta</button>
+                    <div class="cont">
+                        <p> <br/> A tag &lt;div&gt; define uma divisão ou seção em um documento HTML.
+                            O elemento &lt;div&gt; geralmente é usado como um contêiner para outros elementos
+                            HTML para estilizá-los com CSS ou para executar determinadas tarefas com
+                            JavaScript.</p>
+                    </div></li> <br/>
+
+                <li>Faça um formulário que peça os dados pessoais da pessoa (nome, sobrenome, idade,
+                    endereço, cidade, sexo e número de telefone).</li> <br/>
+
+                <li>Faça outro formulário agora que peça e-mail e senha.</li> <br/>
+            </ol>  
+        </div>
+
+        <a href="{{url_for('index')}}"><button class="button"><span>FINALIZAR</span></button></a>
     </div>
 </section>
 

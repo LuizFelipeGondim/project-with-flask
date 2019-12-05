@@ -42,7 +42,8 @@
     <img class="card-img-top" src="static/img/web.jpg" alt="Imagem de capa do card">
     <div class="card-body">
       <h5 class="card-title">HTML</h5>
-      <p class="card-text">O objetivo desse curso é fazer com que o aluno tenha um conhecimento básico da linguagem de marcação HTML.</p>
+      <p class="card-text">O objetivo desse curso é fazer com que o aluno tenha um conhecimento básico da linguagem de marcação HTML.
+      </p>
       {% if current_user.is_authenticated %}
         <a href="{{url_for('html')}}" class="btn btn-primary">Iniciar</a>
       {% else %} 
@@ -56,7 +57,8 @@
     <img class="card-img-top" src="static/img/logica.jpg" alt="Imagem de capa do card">
     <div class="card-body">
       <h5 class="card-title">LÓGICA</h5>
-      <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+      <p class="card-text">O objetivo desse curso é fazer com que o aluno tenha um conhecimento básico de lógica e de suas principais
+          estruturas.</p>
       {% if current_user.is_authenticated %}
         <a href="{{url_for('logica')}}" class="btn btn-primary">Iniciar</a>
       {% else %} 
@@ -94,9 +96,8 @@
         <h4>LUIZ FELIPE</h4>
       </div>
 
-      <p class="texto-curso">  Será utilizado o Portugol para demonstrar a lógica básica e as estruturas mais utilizadas no universo da programação. 
-          Essa pseudo-linguagem será utilizada porque ela é o que há de mais próximo do português, o que facilita na aprendizagem 
-          do aluno.</p>
+      <p class="texto-curso">  Estudande do ensino médio, cursando o quarto semestre de Técnico em Informática para Internet 
+          no Instituto Federal Baiano - Campus Guanambi. Sou também desenvolvedor web e entusiasta na área de tecnologia. </p>
       
     </div>
     <br/><br/>
@@ -111,9 +112,8 @@
         <h4>DOMINIQUE TRINDADE</h4>
       </div><br/>
 
-      <p class="texto-curso"> Será utilizado o Portugol para demonstrar a lógica básica e as estruturas mais utilizadas no universo 
-        da programação. Essa pseudo-linguagem será utilizada porque ela é o que há de mais próximo do português, o que facilita 
-        na aprendizagem do aluno.</p>
+      <p class="texto-curso"> Estudande do ensino médio, cursando o quarto semestre de técnico em informática para internet 
+        no Instituto Federal Baiano - Campus Guanambi. Além disso, é a atual redatora do site.</p>
     </div>
   </div>
 </section>

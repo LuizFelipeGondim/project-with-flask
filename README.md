@@ -1,1 +1,1 @@
-Site construído por Luiz Felipe Gondim Araujo
+Site construído por Luiz Felipe e Dominique Trindade

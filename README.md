@@ -1,1 +1,2 @@
-Site construído por Luiz Felipe
+Site construído com Flask.
+Estado: Em construção.

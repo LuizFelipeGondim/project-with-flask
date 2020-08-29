@@ -23,5 +23,5 @@ Este projeto é um modelo simples de autenticação com Flask :)
 ```
 
 ---
-Feito por Luiz Felipe.
+Feito por Luiz Felipe Gondim.
 

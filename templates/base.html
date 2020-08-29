@@ -11,13 +11,6 @@
 
         <link rel="icon" type="imagem/png" href="static/img/meufavicon.png" />
 
-        
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                crossorigin="anonymous"></script>
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                crossorigin="anonymous"></script>
-
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                 crossorigin="anonymous"></script>
 
@@ -36,12 +29,14 @@
     <body>
 
         <header>
+
             <input type="checkbox" id="btn-menu">
             <label id="menu_icon" for="btn-menu">
                 <div></div>
                 <div></div>
                 <div></div> 
             </label>
+
             <form action="https://www.google.com/search" id="form-header-responsive">
                 <input type="text" name="q" placeholder="  Search" >                
             </form>
@@ -49,10 +44,15 @@
             <nav id="menu">
             
                 <ul>
-                    <li><a href="/apoie">APOIE-NOS</a></li> 
+                    
                     <li><a href="/index">HOME</a></li>
-                    {% block botao %}
-                    {% endblock %} 
+                    <li><a href="/login">LOGIN</a></li> 
+                    <li><a href="/cadastro">CADASTRO</a></li> 
+                    
+                    {% if current_user.is_authenticated %}
+                        <li><a href="/logout">SAIR</a></li>  
+                    {% endif %}
+                    
                     <li>
                         <form action="https://www.google.com/search">
                             <input type="text" name="q" placeholder="  Search">
@@ -94,60 +94,12 @@
                         <center>
                             <img src="static/img/footer.png" alt="logo do IF">
                         </center>
-                        <p>Página voltada ao ensino de algumas áreas da informática,
-                            visando o auxílio daqueles que iniciam nesse mundo. 
+                        <p>
+                            Maecenas lobortis sit amet ipsum ut finibus. 
+                            Curabitur eu erat eu nibh congue auctor vel vestibulum ipsum.
                         </p>
                  </div>
             </div>
-
-            <div id="copy">
-                <p>&copy; Virtual Teaching</p>
-            </div>
-    
         </footer>
-
-            <div id="mySidepanel" class="sidepanel">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <div class="content-section">
-                    <div class="media">
-                        {% if image %}
-                        <img class="rounded-circle account-img" style="height: 70px; width:70px"  src="{{ url_for('static', filename=image) }}">
-                        {% endif %}
-                        <div>
-                            <h2 class="account-heading">{{ current_user.username }}</h2>
-                            <p class="text-secondary">{{ current_user.email }}</p>
-                        </div>
-                        {% block caixa %} 
-                        {% endblock  %}
-                        <a href="/logout" onclick="closeNav()" style="font-size: 15px; margin-left: -30px;">SAIR</a>
-                    </div>
-                </div>
-                
-               
-            </div>
-
-        <script type="text/javascript">
-            function openNav() {
-                document.getElementById("mySidepanel").style.width = "250px";
-            }
-            
-            function closeNav() {
-                document.getElementById("mySidepanel").style.width = "0";
-            } 
-            var coll = document.getElementsByClassName("collapsible");
-            var i;
-
-            for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                content.style.display = "none";
-                } else {
-                content.style.display = "block";
-                }
-            });
-            }
-        </script>
     </body>
 </html>

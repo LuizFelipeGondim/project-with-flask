@@ -16,7 +16,7 @@ Este projeto é um modelo simples de autenticação com Flask :)
 
 - Em seguida, instale as dependências: pip install -r requirements.txt ✔
 
-- Inicie o sistema: python3 app.py ✔
+- Inicie a aplicação: python3 app.py ✔
 
 - Acesse o link http://127.0.0.1:5000/ para ver o site ✔
 
